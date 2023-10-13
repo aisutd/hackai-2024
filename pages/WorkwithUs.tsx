@@ -11,7 +11,7 @@ function WorkWithUsSection()
     const isInView = useInView(ref, { once: true });
 
     return (
-        <div className="py-14 text-white">
+        <div className="py-14 text-white bg-ais-work-with-us-blue">
             <div className="mb-2 flex flex-row justify-center">
                 <Typography fontFamily={"var(--lucidity)"} className="text-4xl font-bold">WORK WITH US</Typography>
             </div>

@@ -16,6 +16,9 @@ module.exports = {
           white: '#fafafa',
           navy: '#202042',
           gray: '#B8B8B8',
+          'work-with-us-blue': '#3E69B9',
+          'new-blue': '#458EEC'
+
         },
       },
       backgroundSize: {

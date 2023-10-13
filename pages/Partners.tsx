@@ -60,27 +60,24 @@ function displaySponsers() {
 
 function Partners() {
     return (
-        <Box marginY="3rem" sx={{
+        <Box marginY="3rem" className="bg-ais-new-blue" sx={{
             display: "flex",
             flexDirection: "column",
-            alignItems: "center"
+            alignItems: "center",
         }}>
             <Box color="#1A2025" sx={{
                 display: "flex",
                 flexDirection: "column",
-                alignItems: "center"
+                alignItems: "center",
             }}>
                 <Typography fontSize={fontSize.title} fontFamily={"var(--lucidity)"}>
-                    Partners
-                </Typography>
-                <Typography fontSize={fontSize.subHeading} fontFamily='Hind Siliguri'>
-                    More coming soon!
+                    Past Partners
                 </Typography>
             </Box>
             <Box sx={{
                 display: "flex",
                 flexDirection: "column",
-                width: "70%"
+                width: "70%",
             }}>
                 {displaySponsers()}
             </Box>

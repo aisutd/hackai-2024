@@ -59,10 +59,9 @@ export default function HomePage() {
         <section id="faqs" className="relative" style={{marginTop: '3rem'}}>
           <FAQs />
         </section>
-        <section id="partners" className="relative" style={{backgroundColor: '#FEF9EE'}}>
-          <img width="100%" src="top-red-triangles.svg" style={{marginTop: '-1px'}} />
+        <section id="partners" className="relative bg-ais-new-blue">
           <Partners />
-          <img width="100%" src="bottom-red-triangles.svg" />
+          <img width="100%" src="mountains.png" />
         </section>
         <section id="work with us" className="relative">
           <WorkWithUsSection/>
