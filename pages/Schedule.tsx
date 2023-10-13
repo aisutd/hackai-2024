@@ -5,8 +5,6 @@ import TabContext from '@mui/lab/TabContext';
 import '@fontsource/hind-siliguri';
 import { useState } from 'react';
 
-////TESTS!!!!
-
 function Schedule() {
   const [value, setValue] = React.useState('one');
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
@@ -14,18 +12,18 @@ function Schedule() {
   };
   return (
     <>
-      <div className="justify-center items-center h-center">
+      <div className="justify-center items-center h-center bg-ais-background-blue">
         <div className="flex justify-center items-center h-center">
+          <img></img>
           <div className="font-sans-CooperHewitt text-4xl text-center p-20">
-            <Typography fontFamily={'var(--lucidity)'} className="text-xl md:text-4xl font-bold">
+            <Typography
+              fontFamily={'var(--Placard Next)'}
+              className="text-xl md:text-4xl font-bold "
+            >
               SCHEDULE
             </Typography>
-            <Typography
-              fontFamily={'var(--lucidity)'}
-              className="text-lg md:text-xl font-bold text-red-500"
-            >
-              **Disclaimer: we will try our best to accommodate for dietary restrictions, however
-              please note that we may not be able to**
+            <Typography fontFamily={'var(--lucidity)'} className="text-lg md:text-xl font-bold">
+              *All times listed are in Central Daylight Time (CDT).
             </Typography>
             <Typography
               fontFamily={'var(--lucidity)'}
@@ -40,10 +38,10 @@ function Schedule() {
             </Typography>
           </div>
         </div>
-        <div className="justify-center h-center flex gap-[5vw]">
+        <div className="justify-center h-center flex gap-[5vw] bg-ais-background-blue">
           <img
             className="w-[45vw] pl-60 object-contain justify-center hidden lg:block"
-            src="schedule.svg"
+            src="hackai-24-logo.png"
           ></img>
           <Box sx={{ width: '100%' }}>
             <TabContext value={value}>
@@ -53,9 +51,22 @@ function Schedule() {
                 aria-label="labels"
                 indicatorColor="primary"
               >
-                <Tab className="text-[#FEF9EE] h-10 w-40" value="one" label="Friday" />
-                <Tab className="text-[#FEF9EE] h-10 w-40" value="two" label="Saturday" />
-                <Tab className="text-[#FEF9EE] h-10 w-40" value="three" label="Sunday" />
+                //fix this: every time tab is open, the color should change to black
+                <Tab
+                  className="text-[#FEF9EE] h-10 w-40 hover:bg-black"
+                  value="one"
+                  label="Friday"
+                />
+                <Tab
+                  className="text-[#FEF9EE] h-10 w-40 hover:bg-black active:bg-black"
+                  value="two"
+                  label="Saturday"
+                />
+                <Tab
+                  className="text-[#FEF9EE] h-10 w-40 hover:bg-black active:bg-black"
+                  value="three"
+                  label="Sunday"
+                />
               </Tabs>
               <TabPanel value="one" aria-label="Friday">
                 <Typography fontFamily={'var(--hind)'} className="text-md md:text-1xl pb-1">
