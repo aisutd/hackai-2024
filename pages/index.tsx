@@ -37,14 +37,14 @@ export default function HomePage() {
           content="Welcome to HackAI: the biggest AI hackathon in North Texas!"
         />
       </Head>
-      <main className="min-h-screen bg-[#1A2025] font-oriya text-ais-white subpixel-antialiased overflow-x-hidden">
+      <main className="min-h-screen bg-[#FFF9F5] font-oriya text-ais-white subpixel-antialiased overflow-x-hidden">
         <section id="appbar" className="fixed z-10 uppercase text-white font-bold text-xl">
           <Appbar/>
         </section>
         <section id="landing" className="relative w-[100vw] h-[100vh] z-0">
           <Landing/>
         </section>
-        <section id="about" className="relative z-0 mt-[min(25vh,25vw)]">
+        <section id="about" className="relative z-0">
           <AboutSection/>
         </section>
         <section id="speakers" className="relative">
