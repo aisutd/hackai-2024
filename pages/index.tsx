@@ -11,6 +11,7 @@ import Schedule from './Schedule';
 import { Typography, Button, Menu, MenuItem } from '@mui/material';
 import FAQs from './FAQs';
 import Partners from './Partners';
+import JoinSection from './JoinSection';
 
 export default function HomePage() {
   {/*for the appbar*/}
@@ -31,7 +32,7 @@ export default function HomePage() {
     <>
       <Head>
         <title>HackAI</title>
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/svg+xml" href="/hai-logo.svg" />
         <meta
           name="description"
           content="Welcome to HackAI: the biggest AI hackathon in North Texas!"
@@ -66,6 +67,9 @@ export default function HomePage() {
         </section>
         <section id="work with us" className="relative">
           <WorkWithUsSection/>
+        </section>
+        <section id="join" className="relative">
+          <JoinSection/>
         </section>
         <section id="footer" className="relative">
           <FooterSection/>

@@ -3,3 +3,8 @@
 @import 'tailwindcss/utilities';
 @import url('https://fonts.googleapis.com/earlyaccess/notosansoriyaui.css');
 @import url('https://fonts.cdnfonts.com/css/lucidity');
+@font-face {
+  font-family: "";
+  src: local("placard"),
+    url("./public/fonts/PlacardNext/PlacardNextRegular.ttf") format("truetype");
+}

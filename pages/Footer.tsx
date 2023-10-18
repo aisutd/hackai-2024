@@ -27,7 +27,7 @@ function FooterSection()
                 <div className='flex flex-col mt-10 sm:mt-0'>
                     <button onClick={() => window.open("https://www.aisutd.org/", "_blank")}>
                         <Typography fontFamily={"hind siliguri"} fontWeight={600} className='text-center sm:text-right' fontSize={25} color="white">
-                        AIS Website <img src="www-icon.svg" className="inline h-[1.5rem] object-contain"/>
+                        AIS Website <img src="internet-globe.svg" className="inline h-[1.5rem] object-contain"/>
                         </Typography>
                     </button>
                     <div className='flex flex-row items-center justify-between'>
