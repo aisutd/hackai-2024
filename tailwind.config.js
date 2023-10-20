@@ -20,6 +20,14 @@ module.exports = {
           'new-blue': '#458EEC'
 
         },
+        hai: {
+          orange:'#FE6B52',
+          'dark-blue':'#3E69B9',
+          'light-blue':'#458EEC',
+          navy:'#293039',
+          gray:'#4F4F4F',
+          beige:'#FFF9F5'
+        }
       },
       backgroundSize: {
         fill:'100% 100%',
@@ -62,6 +70,13 @@ module.exports = {
           //'transform': 'rotateX(0deg)',
         }
       },
+    },
+    fontFamily: {
+      sans: ['IBM Plex Sans', 'sans-serif'],
+      cairo: ['Cairo', 'sans-serif'],
+      hind: ['Hind Siliguri'],
+      lucidity: ['var(--lucidity)'],
+      placard: ['var(--placard)']
     },
   },
   variants: {
