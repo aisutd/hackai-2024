@@ -15,7 +15,7 @@ function FooterSection()
         <div className="mx-auto py-20 sm:px-[5vw] md:px-20 text-white">
             <div className='flex flex-col sm:flex-row text-center sm:text-left items-center justify-between'>
                 <Box>
-                    <Typography fontFamily={"var(--lucidity)"} fontWeight={600} fontSize={48} color="white">
+                    <Typography fontFamily={"var(--PlacardNext)"} fontWeight={600} fontSize={48} color="white">
                         HACKAI
                     </Typography>
                     <div className='w-[380px]'>

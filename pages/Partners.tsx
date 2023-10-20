@@ -67,7 +67,7 @@ function Partners() {
         }}>
             <Paper sx={{
                         marginTop: "5rem",
-                        padding: "5rem",
+                        padding: "3rem",
                         margin: '8rem 8rem 0 8rem',
                         display: "flex",
                         flexDirection: "row",
@@ -81,10 +81,10 @@ function Partners() {
                     flexDirection: "column",
                     alignItems: "center",
                     width: '100%',
-                    marginBottom: '3rem'
+                    marginBottom: '4rem'
                 }}>
-                    <Typography fontSize={fontSize.title} fontFamily={"var(--lucidity)"}>
-                        Past Partners
+                    <Typography fontSize={fontSize.title} fontFamily={"var(--PlacardNext)"} className="font-semibold">
+                        PAST PARTNERS
                     </Typography>
                 </Box>
                 <Box sx={{
