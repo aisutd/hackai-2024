@@ -60,7 +60,7 @@ export default function HomePage() {
           <FAQs />
         </section>
         <section id="partners" className="relative bg-ais-new-blue">
-          <Partners />
+          <Partners/>
           <img width="100%" src="mountains.png" />
         </section>
         <section id="work with us" className="relative">

@@ -13,7 +13,7 @@ function WorkWithUsSection()
     return (
         <div className="py-14 text-white bg-ais-work-with-us-blue">
             <div className="mb-2 flex flex-row justify-center">
-                <Typography fontFamily={"var(--lucidity)"} className="text-4xl font-bold">WORK WITH US</Typography>
+                <Typography fontFamily={"var(--lucidity)"} className="text-5xl">WORK WITH US</Typography>
             </div>
             <div className='flex flex-col lg:flex-row items-center justify-evenly'>
                 <Box
@@ -37,30 +37,30 @@ function WorkWithUsSection()
                             height: 40,
                             mt:-3,
                             backgroundColor: "#FEF9EE",
-                            ml: 5
+                            mx: 'auto',
                         }}
                         border={3}
                         borderRadius={10}
                     >
-                        <Typography flexGrow={1} textAlign="center" fontFamily={"var(--cooper)"} fontSize={20} color="#B93648">
+                        <Typography flexGrow={1} textAlign="center" fontFamily={"var(--cooper)"} fontSize={20} color="#FE6B52">
                             Students
                         </Typography>
                     </Box>
-                    <div className='flex flex-col justify-around mt-5'>
-                        <Typography fontFamily={"var(--cooper)"} className='ml-[5vw] lg:ml-10' fontSize={25} color="white">
+                    <div className='flex flex-col justify-around mt-5 text-center'>
+                        <Typography fontFamily={"var(--cooper)"} className='ml-[5vw] lg:ml-2' fontSize={25} color="white">
                             Interested in helping?
                         </Typography>
                         <div className='w-[80vw] lg:w-[450px] pt-3'>
-                            <Typography fontFamily={"Hind Siliguri"} className='ml-[5vw] w-[70vw] lg:ml-10 lg:w-full'>
+                            <Typography fontFamily={"Hind Siliguri"} className='ml-[5vw] w-[70vw] lg:ml-6 lg:w-full'>
                                 If you're interested in becoming a volunteer or mentor, we're constantly on the lookout for individuals
                                 to help make HackAI the best AI hackathon! Please fill out the form below.
                             </Typography>
                         </div>
                         <div className='flex mt-2 sm:mt-10 flex-row items-center justify-evenly'>
-                            <Button onClick={() => window.open("https://coda.io/form/Volunteer-Mentor-Form_dBCSFvzl4RV", "_blank")} className='bg-[#FEF9EE] w-[140px] text-[#B93648] hover:bg-[#B93648] hover:text-[#FEF9EE]' variant="contained">
+                            <Button onClick={() => window.open("https://coda.io/form/Volunteer-Mentor-Form_dBCSFvzl4RV", "_blank")} className='p-3 bg-[#FEF9EE] w-[140px] text-[#FE6B52] hover:bg-[#FE6B52] hover:text-[#FEF9EE]' variant="contained">
                                 <Typography fontFamily={"var(--cooper)"} textTransform={"none"}>Volunteer</Typography>
                             </Button>
-                            <Button onClick={() => window.open("https://coda.io/form/Volunteer-Mentor-Form_dBCSFvzl4RV", "_blank")} className='bg-[#FEF9EE] w-[140px] text-[#B93648] hover:bg-[#B93648] hover:text-[#FEF9EE]' variant="contained">
+                            <Button onClick={() => window.open("https://coda.io/form/Volunteer-Mentor-Form_dBCSFvzl4RV", "_blank")} className='p-3 bg-[#FEF9EE] w-[140px] text-[#FE6B52] hover:bg-[#FE6B52] hover:text-[#FEF9EE]' variant="contained">
                                 <Typography fontFamily={"var(--cooper)"} textTransform={"none"}>Mentor</Typography>
                             </Button>
                         </div>
@@ -87,27 +87,27 @@ function WorkWithUsSection()
                             height: 40,
                             mt:-3,
                             backgroundColor: "#FEF9EE",
-                            ml: 5
+                            mx: 'auto',
                         }}
                         border={3}
                         borderRadius={10}
                     >
-                        <Typography fontFamily={"var(--cooper)"} flexGrow={1} textAlign="center" fontSize={20} color="#B93648">
+                        <Typography fontFamily={"var(--cooper)"} flexGrow={1} textAlign="center" fontSize={20} color="#FE6B52">
                             Companies
                         </Typography>
                     </Box>
-                    <div className='flex flex-col justify-around mt-5'>
-                        <Typography fontFamily={"var(--cooper)"} className='ml-[5vw] lg:ml-10' fontSize={25} color="white">
+                    <div className='flex flex-col justify-around mt-5 text-center'>
+                        <Typography fontFamily={"var(--cooper)"} className='ml-[5vw] lg:ml-6' fontSize={25} color="white">
                             Interested in partnering?
                         </Typography>
                         <div className='w-[80vw] lg:w-[450px] pt-3'>
-                            <Typography fontFamily={"Hind Siliguri"}  className='ml-[5vw] w-[70vw] lg:ml-10 lg:w-full'>
+                            <Typography fontFamily={"Hind Siliguri"}  className='ml-[5vw] w-[70vw] lg:ml-6 lg:w-full'>
                                 If you or a group you represent are interested in partnering, please click below to view our Partner
                                 Packet.
                             </Typography>
                         </div>
-                        <div className='flex sm:mt-16 flex-row items-center justify-center pt-6'>
-                            <Button onClick={() => location.href="mailto:contact@aisociety.io"} className='bg-[#FEF9EE] w-[170px] text-[#B93648] hover:bg-[#B93648] hover:text-[#FEF9EE]' variant="contained">
+                        <div className='flex sm:mt-16 flex-row items-center justify-center'>
+                            <Button onClick={() => location.href="mailto:contact@aisociety.io"} className='p-3 bg-[#FEF9EE] w-[170px] text-[#FE6B52] hover:bg-[#FE6B52] hover:text-[#FEF9EE]' variant="contained">
                                 <Typography fontFamily={"var(--cooper)"} textTransform={"none"}>Contact Us</Typography>
                             </Button>
                         </div>

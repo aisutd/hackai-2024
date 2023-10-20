@@ -1,4 +1,4 @@
-import { Box, Typography, useMediaQuery } from "@mui/material";
+import { Box, Typography, useMediaQuery, Paper } from "@mui/material";
 import "@fontsource/hind-siliguri";
 
 const sponserDir = "sponsers"
@@ -65,22 +65,36 @@ function Partners() {
             flexDirection: "column",
             alignItems: "center",
         }}>
-            <Box color="#1A2025" sx={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-            }}>
-                <Typography fontSize={fontSize.title} fontFamily={"var(--lucidity)"}>
-                    Past Partners
-                </Typography>
-            </Box>
-            <Box sx={{
-                display: "flex",
-                flexDirection: "column",
-                width: "70%",
-            }}>
-                {displaySponsers()}
-            </Box>
+            <Paper sx={{
+                        marginTop: "5rem",
+                        padding: "5rem",
+                        margin: '8rem 8rem 0 8rem',
+                        display: "flex",
+                        flexDirection: "row",
+                        flexWrap: "wrap",
+                        alignContent: "center",
+                        justifyContent: "space-between",
+                        backgroundColor: "#FFF9F5",
+                    }}>
+                <Box color="#1A2025" sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    width: '100%',
+                    marginBottom: '3rem'
+                }}>
+                    <Typography fontSize={fontSize.title} fontFamily={"var(--lucidity)"}>
+                        Past Partners
+                    </Typography>
+                </Box>
+                <Box sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    width: "100%",
+                }}>
+                    {displaySponsers()}
+                </Box>
+            </Paper>
         </Box>
     );
 }
