@@ -11,7 +11,7 @@ function WorkWithUsSection()
     const isInView = useInView(ref, { once: true });
 
     return (
-        <div className="py-14 text-white bg-ais-work-with-us-blue">
+        <div className="py-14 text-white bg-hai-dark-blue">
             <div className="mb-2 flex flex-row justify-center">
                 <Typography fontFamily={"var(--PlacardNext)"} className="font-medium text-5xl">WORK WITH US</Typography>
             </div>
@@ -113,14 +113,6 @@ function WorkWithUsSection()
                         </div>
                     </div>
                 </Box>
-            </div>
-            <div className='mt-10 flex flex-col items-center justify-center text-center'>
-                <Typography color={"white"} fontFamily={"var(--lucidity)"} fontSize={75}>JOIN HACKAI'23!</Typography>
-                <Button onClick={() => window.open("https://coda.io/form/HackAI-2022_d4OphGKMDDl", "_blank")} className='bg-white rounded-lg w-[170px] text-[#1A2025] hover:scale-125 hover:bg-white hover:text=[#1A2025]'>
-                    <Typography fontFamily={"var(--lucidity)"}>
-                        REGISTER NOW!
-                    </Typography>
-                </Button>
             </div>
         </div>
     )

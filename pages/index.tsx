@@ -4,9 +4,7 @@ import Appbar from './Appbar'
 import Landing from './Landing'
 import AboutSection from './AboutSection';
 import FooterSection from './Footer';
-import SpeakersSection from './SpeakersSection';
 import WorkWithUsSection from './WorkwithUs';
-import Tracks from './Tracks';
 import Schedule from './Schedule';
 import { Typography, Button, Menu, MenuItem } from '@mui/material';
 import FAQs from './FAQs';
@@ -47,12 +45,6 @@ export default function HomePage() {
         </section>
         <section id="about" className="relative z-0">
           <AboutSection/>
-        </section>
-        <section id="speakers" className="relative">
-          <SpeakersSection/>
-        </section>
-        <section id="tracks" className="relative">
-          <Tracks />
         </section>
         <section id="schedule" className="relative">
           <Schedule />

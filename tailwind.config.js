@@ -16,10 +16,7 @@ module.exports = {
           'background-blue': '#3E69B9',
           white: '#fafafa',
           navy: '#202042',
-          gray: '#B8B8B8',
-          'work-with-us-blue': '#3E69B9',
-          'new-blue': '#458EEC'
-
+          gray: '#B8B8B8'
         },
         hai: {
           orange:'#FE6B52',
