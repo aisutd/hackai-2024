@@ -1,4 +1,4 @@
-import { Box, Typography, useMediaQuery } from "@mui/material";
+import { Box, Typography, useMediaQuery, Paper } from "@mui/material";
 import "@fontsource/hind-siliguri";
 
 const sponserDir = "sponsers"
@@ -60,30 +60,41 @@ function displaySponsers() {
 
 function Partners() {
     return (
-        <Box marginY="3rem" sx={{
+        <Box marginY="3rem" className="bg-ais-new-blue" sx={{
             display: "flex",
             flexDirection: "column",
-            alignItems: "center"
+            alignItems: "center",
         }}>
-            <Box color="#1A2025" sx={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center"
-            }}>
-                <Typography fontSize={fontSize.title} fontFamily={"var(--lucidity)"}>
-                    Partners
-                </Typography>
-                <Typography fontSize={fontSize.subHeading} fontFamily='Hind Siliguri'>
-                    More coming soon!
-                </Typography>
-            </Box>
-            <Box sx={{
-                display: "flex",
-                flexDirection: "column",
-                width: "70%"
-            }}>
-                {displaySponsers()}
-            </Box>
+            <Paper sx={{
+                        marginTop: "5rem",
+                        padding: "3rem",
+                        margin: '8rem 8rem 0 8rem',
+                        display: "flex",
+                        flexDirection: "row",
+                        flexWrap: "wrap",
+                        alignContent: "center",
+                        justifyContent: "space-between",
+                        backgroundColor: "#FFF9F5",
+                    }}>
+                <Box color="#1A2025" sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    width: '100%',
+                    marginBottom: '4rem'
+                }}>
+                    <Typography fontSize={fontSize.title} fontFamily={"var(--PlacardNext)"} className="font-semibold">
+                        PAST PARTNERS
+                    </Typography>
+                </Box>
+                <Box sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    width: "100%",
+                }}>
+                    {displaySponsers()}
+                </Box>
+            </Paper>
         </Box>
     );
 }

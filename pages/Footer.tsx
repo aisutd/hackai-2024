@@ -12,10 +12,10 @@ function FooterSection()
 
     return (
     
-        <div className="mx-auto pb-14 sm:px-[5vw] text-white">
+        <div className="mx-auto py-20 sm:px-[5vw] md:px-20 text-white">
             <div className='flex flex-col sm:flex-row text-center sm:text-left items-center justify-between'>
                 <Box>
-                    <Typography fontFamily={"var(--lucidity)"} fontWeight={600} fontSize={40} color="white">
+                    <Typography fontFamily={"var(--PlacardNext)"} fontWeight={600} fontSize={48} color="white">
                         HACKAI
                     </Typography>
                     <div className='w-[380px]'>
@@ -26,8 +26,8 @@ function FooterSection()
                 </Box>
                 <div className='flex flex-col mt-10 sm:mt-0'>
                     <button onClick={() => window.open("https://www.aisutd.org/", "_blank")}>
-                        <Typography fontFamily={"hind siliguri"} fontWeight={600} className='text-center sm:text-right' fontSize={25} color="white">
-                        AIS Website <img src="internet-globe.svg" className="inline h-[1.5rem] object-contain"/>
+                        <Typography fontFamily={"hind siliguri"} fontWeight={600} className='text-center sm:text-right ml-10' fontSize={18} color="white">
+                        AIS Website
                         </Typography>
                     </button>
                     <div className='flex flex-row items-center justify-between'>
