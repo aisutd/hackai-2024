@@ -18,22 +18,19 @@ function Schedule() {
           <div className="font-sans-CooperHewitt text-4xl text-center p-20">
             <Typography
               fontFamily={'var(--Placard Next)'}
-              className="text-xl md:text-4xl font-bold "
+              className="text-xl md:text-4xl font-bold"
             >
-              SCHEDULE
-            </Typography>
-            <Typography fontFamily={'var(--lucidity)'} className="text-lg md:text-xl font-bold">
-              *All times listed are in Central Daylight Time (CDT).
+              SCHEDULE (From 2023)
             </Typography>
             <Typography
               fontFamily={'var(--lucidity)'}
-              className="text-lg md:text-xl font-bold text-blue-500"
+              className="text-lg md:text-xl font-bold"
             >
               <a
                 target="_blank"
                 href="https://aisutd.notion.site/aisutd/HackAI-Hacker-Guide-1a42a12a713341dd9e9c7200054fee47"
               >
-                Click for Hacker Guide
+                Click for 2023 Hacker Guide
               </a>
             </Typography>
           </div>
