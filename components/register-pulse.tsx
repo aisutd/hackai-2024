@@ -17,11 +17,8 @@ function RegisterPulse(props)
 
   return(
     <div className={props.className}>
-      <animated.div id="register pulse" className="absolute bg-[#FF1122] w-[16rem] h-[4rem] rounded-[1.3rem] blur-[2px] -z-10"
-        style={pulse}/>
-
-      <button onClick={() => window.open("https://coda.io/form/HackAI-2022_d4OphGKMDDl", "_blank")} className="w-[16rem] h-[4rem] bg-white rounded-[1.3rem] border-[3px] border-black hover:[transform:scale(1.07)] text-black font-bold uppercase z-0">
-        <Typography variant="h6" fontFamily={"var(--lucidity)"}>Register Now</Typography>
+      <button className="w-[16rem] h-[4rem] bg-white rounded-[1.3rem] border-[3px] border-[#FE6B52] hover:[transform:scale(1.07)] uppercase z-0">
+        <Typography variant="h6" fontFamily={"var(--PlacardNext)"} className="text-[#FE6B52] font-bold text-2xl">Register Now!</Typography>
       </button>
     </div>
   )
