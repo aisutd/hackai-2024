@@ -60,7 +60,7 @@ function displaySponsers() {
 
 function Partners() {
     return (
-        <Box marginY="3rem" className="bg-ais-new-blue" sx={{
+        <Box className="bg-hai-new-blue" sx={{
             display: "flex",
             flexDirection: "column",
             alignItems: "center",

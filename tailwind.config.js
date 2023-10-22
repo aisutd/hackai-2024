@@ -16,10 +16,7 @@ module.exports = {
           'background-blue': '#3E69B9',
           white: '#fafafa',
           navy: '#202042',
-          gray: '#B8B8B8',
-          'work-with-us-blue': '#3E69B9',
-          'new-blue': '#458EEC'
-
+          gray: '#B8B8B8'
         },
         hai: {
           orange:'#FE6B52',
@@ -35,6 +32,7 @@ module.exports = {
         'extra-fill': '150% 150%',
       },
       screens: {
+        xs:'465px',
         med: '832px',
       },
     },
@@ -77,7 +75,8 @@ module.exports = {
       cairo: ['Cairo', 'sans-serif'],
       hind: ['Hind Siliguri'],
       lucidity: ['var(--lucidity)'],
-      placard: ['var(--placard)']
+      placard: ['var(--placard)'],
+      roboto: ['var(--roboto)']
     },
   },
   variants: {

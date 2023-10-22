@@ -4,14 +4,14 @@ import Appbar from './Appbar'
 import Landing from './Landing'
 import AboutSection from './AboutSection';
 import FooterSection from './Footer';
-import SpeakersSection from './SpeakersSection';
 import WorkWithUsSection from './WorkwithUs';
-import Tracks from './Tracks';
 import Schedule from './Schedule';
 import { Typography, Button, Menu, MenuItem } from '@mui/material';
 import FAQs from './FAQs';
 import Partners from './Partners';
 import JoinSection from './JoinSection';
+import PastEvent from './PastEvent';
+import Snowfall from 'react-snowfall';
 
 export default function HomePage() {
   {/*for the appbar*/}
@@ -38,29 +38,29 @@ export default function HomePage() {
           content="Welcome to HackAI: the biggest AI hackathon in North Texas!"
         />
       </Head>
-      <main className="min-h-screen bg-[#FFF9F5] font-oriya text-ais-white subpixel-antialiased overflow-x-hidden">
-        <section id="appbar" className="fixed z-10 uppercase text-white font-bold text-xl">
+      <main className="min-h-screen bg-hai-beige font-oriya text-ais-white subpixel-antialiased overflow-x-hidden">
+        <section id="appbar" className="fixed z-50 uppercase text-white font-bold text-xl">
           <Appbar/>
         </section>
-        <section id="landing" className="relative w-[100vw] h-[100vh] z-0">
+        <section id="snow" className="fixed w-[100vw] h-[100vh] z-40 [pointer-events:none]">
+          <Snow/>
+        </section>
+        <section id="landing" className="relative w-[100vw] h-[calc(100vh-5rem)] mt-[5rem] z-0">
           <Landing/>
         </section>
-        <section id="about" className="relative z-0">
+        <section id="about" className="relative z-10">
           <AboutSection/>
         </section>
-        <section id="speakers" className="relative">
-          <SpeakersSection/>
-        </section>
-        <section id="tracks" className="relative">
-          <Tracks />
+        <section id="past event">
+          <PastEvent/>
         </section>
         <section id="schedule" className="relative">
           <Schedule />
         </section>
-        <section id="faqs" className="relative" style={{marginTop: '3rem'}}>
+        <section id="faqs" className="relative bg-gradient-to-b from-hai-dark-blue to-hai-light-blue">
           <FAQs />
         </section>
-        <section id="partners" className="relative bg-ais-new-blue">
+        <section id="partners" className="relative bg-hai-light-blue">
           <Partners/>
           <img width="100%" src="mountains.png" />
         </section>
@@ -75,5 +75,19 @@ export default function HomePage() {
         </section>
       </main>
     </>
+  );
+}
+
+function Snow()
+{
+  return (
+    <Snowfall
+      color="#FFFFFF"
+      radius={[0.5,3.0]}
+      snowflakeCount={150}
+      speed={[0.5,1.5]}
+      wind={[-0.3,0.7]}
+      rotationSpeed={[0,0]}
+    />
   );
 }

@@ -4,13 +4,13 @@ import "@fontsource/hind-siliguri";
 const questions = [
     {
         icons: "faq-icons/robot.svg",
-        heading: "What is hackathon?",
+        heading: "What is a hackathon?",
         body: <>A 24-hour tech event for teams of students to learn new skills, build cool tech projects, and meet tons of other students and tech professionals.</>
     },
     {
         icons: "faq-icons/handhshake.svg",
         heading: "Do I need to have a team?",
-        body: <>There is no strict requirement to have a team. However, even if a team is desired, you can work with a team of two to four people. We will also have team matching activities if you would like a team. </>
+        body: <>Although you can work in up to a team of four, you do not have to have a team. We will also have team matching activities if you would like a team. </>
     },
     {
         icons: "faq-icons/person.svg",
@@ -18,15 +18,16 @@ const questions = [
         body: <>You must be at least <b>18 years</b> of age. Non-STEM majors, first-time hackers, and beginner coders are <b>welcomed</b> and encouraged to join us! This hackathon is meant to introduce AI to everyone. All you need is a drive and passion to learn!</>
     },
     {
-        icons: "faq-icons/computer.svg",
-        heading: "What projects should I expect?",
-        body: <>Topics such as Natural Language Processing, Machine Learning, Data Analytics, and more will be represented amongst these projects, and we are confident that both the creativity and quality of the submissions will be incredibly high</>
-    },
-    {
         icons: "faq-icons/wallet.svg",
         heading: "How much does it cost?",
         body: <>There's food, awesome workshops, and super cool swag that are completely <b>FREE</b>!</>
     },
+    {
+        icons: "faq-icons/computer.svg",
+        heading: "What projects should I expect?",
+        body: <>Topics such as Natural Language Processing, Machine Learning, Data Analytics, and more will be represented amongst these projects, and we are confident that both the creativity and quality of the submissions will be incredibly high</>
+    },
+   
 ]
 
 const fontSizes = {
@@ -37,11 +38,13 @@ const fontSizes = {
 }
 
 function displayListOfQuestions(mobile: boolean) {
-    return (questions.map((obj, key) => {
-        return (
-            <>
+    return (
+        <>
+        {questions.map((obj, key) => {
+            return (
+                <>
                 {mobile ? <div className="h-[20px]"/> : <></>}
-                <Box key={key} marginBottom='1.5rem' sx={mobile ? {} : {minWidth: '30%', maxWidth: "47%"}}>
+                <Box key={key} marginBottom='1.5rem' sx={mobile ? {width:'100%'} : {width:"45%"}}>
                     <Box marginBottom='0.5rem' sx={{
                         display: "flex",
                         alignContent: "center",
@@ -58,34 +61,37 @@ function displayListOfQuestions(mobile: boolean) {
                         {obj.body}
                     </Typography>
                 </Box>
-            </>
-        );
-    }));
+                </>
+            );
+        })}
+        <img src="hai-logo.png" className="h-[10rem] w-[45%] object-contain"/>
+        </>
+    );
 }
 
 function displayMobile() {
     return(
-        <>
+        <div className="py-[3rem]">
             <Box sx={{
                 display:"flex",
                 flexDirection: "column",
                 alignItems: "center"
             }}>
-                <Typography variant="h2" color='#FEF9EE' fontSize={fontSizes.title} 
+                <Typography variant="h2" color="#FEF9EE" fontSize={fontSizes.title} 
                             fontWeight={500} fontFamily={"var(--lucidity)"}>
                     FAQS
                 </Typography>
                 <Typography marginBottom="2rem" fontSize={fontSizes.heading} fontFamily={"Hind Siliguri"} className="text-center">
-                    Have more questions? Send an email to <Link>contact@aisociety.io</Link>
+                    Have more questions? Send an email to <Link color="#99ebff">contact@aisociety.io</Link>
                 </Typography>
             </Box>
             
             <div className="px-[5vw]">
-                <Paper className="px-[5vw] flex flex-col items-center bg-[#FEF9EE] mb-[50px]">
+                <Paper className="px-[5vw] py-[2rem] flex flex-col items-center bg-[#FEF9EE]">
                     {displayListOfQuestions(true)}
                 </Paper>
             </div>
-        </>
+        </div>
     )
 }
 
@@ -96,7 +102,8 @@ function FAQs() {
         return displayMobile()
     else
         return (
-            <Box sx={{padding: "5rem"}}>
+        <>
+            <Box sx={{padding: "3rem"}}>
                 <Box>
                     <Box sx={{
                         display:"flex",
@@ -107,8 +114,8 @@ function FAQs() {
                                     fontWeight={500} fontFamily={"var(--lucidity)"}>
                             FAQS
                         </Typography>
-                        <Typography marginBottom="2rem" fontSize={fontSizes.heading} fontFamily={"Hind Siliguri"}>
-                            Have more questions? Send an email to <Link>contact@aisociety.io</Link>
+                        <Typography marginBottom="2rem" color='#FEF9EE' fontSize={fontSizes.heading} fontFamily={"Hind Siliguri"}>
+                            Have more questions? Send an email to <Link color="#99ebff">contact@aisociety.io</Link>
                         </Typography>
                     </Box>
                     <Paper sx={{
@@ -118,15 +125,13 @@ function FAQs() {
                         flexWrap: "wrap",
                         alignContent: "center",
                         justifyContent: "space-between",
-                        backgroundColor: "#FEF9EE",
+                        backgroundColor: "#FFF9F5",
                     }}>
                         {displayListOfQuestions(false)}
-                        <Box margin="-5rem" marginTop="0rem" width={'40%'}>
-                            <img src="FAQs_cards_pic.svg"/>
-                        </Box>
                     </Paper>
                 </Box>
             </Box>
+        </>
         )
 }
 
