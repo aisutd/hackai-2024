@@ -12,10 +12,10 @@ function Schedule() {
   };
   return (
     <>
-      <div className="justify-center items-center h-center bg-ais-background-blue">
+      <div className="py-[3rem] justify-center items-center bg-hai-dark-blue">
         <div className="flex justify-center items-center h-center">
           <img></img>
-          <div className="font-sans-CooperHewitt text-4xl text-center p-20">
+          <div className="font-sans-CooperHewitt text-4xl text-center pb-[3rem]">
             <Typography
               fontFamily={'var(--Placard Next)'}
               className="text-xl md:text-4xl font-bold"
@@ -35,7 +35,7 @@ function Schedule() {
             </Typography>
           </div>
         </div>
-        <div className="justify-center h-center flex gap-[5vw] bg-ais-background-blue">
+        <div className="justify-center h-center flex gap-[5vw]">
           <img
             className="w-[45vw] pl-60 object-contain justify-center hidden lg:block"
             src="hackai-24-logo.png"

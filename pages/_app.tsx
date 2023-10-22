@@ -39,6 +39,14 @@ const placard = localFont({
   ]
 });
 
+const roboto = localFont({
+  src: [
+    {
+      path: "../public/fonts/Roboto/Roboto-Regular.ttf"
+    }
+  ]
+});
+
 export default function MyApp({ Component, pageProps }: AppProps) {
   
   return (
@@ -56,6 +64,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           --cooper: ${cooper.style.fontFamily};
           --campground: ${campground.style.fontFamily};
           --placard: ${placard.style.fontFamily};
+          --roboto: ${roboto.style.fontFamily};
         }
       `}</style>
       <Component {...pageProps} />

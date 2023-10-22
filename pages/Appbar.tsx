@@ -21,7 +21,7 @@ export default function Landing() {
   return (
     <>
       <div className="fixed z-20 backdrop-blur-sm text-hai-orange font-lucidity">
-        <AppbarBG transparencyThreshold="0" className=""/>
+        <div className="absolute bg-hai-beige opacity-80 w-[100vw] h-[5rem] -z-10"/>
         <nav className="bg-none w-[100vw] h-[5rem] grid grid-cols-2 md:grid-cols-3 place-items-center">
           <div onClick={() => {handleItemClick('landing')}} className="flex gap-4 items-center [cursor:pointer]">
             <img src="hai-logo.png" className="h-[3rem] object-contain"/>
@@ -64,46 +64,18 @@ export default function Landing() {
             <button onClick={() => window.open("https://www.instagram.com/utdais", "_blank")}>
               <img src="insta-icon.svg" className="h-[1.5rem] object-contain"/>
             </button>
-            <button onClick={() => window.open("https://www.youtube.com/@artificialintelligencesoci9846", "_blank")}>
-              <img src="yt-icon.svg" className="h-[1.5rem] object-contain"/>
+            <button onClick={() => window.open("https://www.aisutd.org/discord", "_blank")}>
+              <img src="discord-icon.svg" className="h-[1.5rem] object-contain"/>
             </button>
             <button onClick={() => window.open("https://www.linkedin.com/company/ais-utd", "_blank")}>
               <img src="linkedin-icon.svg" className="h-[1.5rem] object-contain"/>
             </button>
-            <button onClick={() => window.open("https://www.aisutd.org/discord", "_blank")}>
-              <img src="discord-icon.svg" className="h-[1.5rem] object-contain"/>
+            <button onClick={() => window.open("https://www.youtube.com/@artificialintelligencesoci9846", "_blank")}>
+              <img src="yt-icon.svg" className="h-[1.5rem] object-contain"/>
             </button>
           </div>
         </nav>
       </div>
     </>
   );
-}
-
-function AppbarBG(props)
-{
-  const [opac, setOpac] = useState(0)
-
-  const { scrollYProgress } = useScroll
-  ({
-    onChange: ({ value: { scrollYProgress } }) =>
-    {
-      if ( scrollYProgress < parseFloat(props.transparencyThreshold) )
-      {
-        setOpac( 1 / parseFloat(props.transparencyThreshold) * scrollYProgress)
-      }
-      else
-      {
-        setOpac(1)
-      }
-    }
-  })
-
-  return(
-    <>
-      {/* <animated.div className="absolute bg-ais-new-beige w-[100vw] h-[5rem] -z-10"
-      style={{ opacity: opac }}/> */}
-      <div className={`absolute bg-hai-beige opacity-80 -m-[1rem] w-[100vw] h-[6rem] -z-10`}/>
-    </>
-  )
 }

@@ -32,6 +32,7 @@ module.exports = {
         'extra-fill': '150% 150%',
       },
       screens: {
+        xs:'465px',
         med: '832px',
       },
     },
@@ -74,7 +75,8 @@ module.exports = {
       cairo: ['Cairo', 'sans-serif'],
       hind: ['Hind Siliguri'],
       lucidity: ['var(--lucidity)'],
-      placard: ['var(--placard)']
+      placard: ['var(--placard)'],
+      roboto: ['var(--roboto)']
     },
   },
   variants: {

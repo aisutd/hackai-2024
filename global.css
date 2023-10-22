@@ -8,3 +8,8 @@
   src: local("placard"),
     url("./public/fonts/PlacardNext/PlacardNextRegular.ttf") format("truetype");
 }
+@font-face {
+  font-family: "";
+  src: local("roboto"),
+    url("./public/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+}
