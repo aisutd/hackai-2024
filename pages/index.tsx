@@ -38,7 +38,7 @@ export default function HomePage() {
           content="Welcome to HackAI: the biggest AI hackathon in North Texas!"
         />
       </Head>
-      <main className="min-h-screen bg-hai-beige font-oriya text-ais-white subpixel-antialiased overflow-x-hidden a">
+      <main className="min-h-screen bg-hai-beige font-oriya text-ais-white subpixel-antialiased overflow-x-hidden">
         <section id="appbar" className="fixed z-50 uppercase text-white font-bold text-xl">
           <Appbar/>
         </section>
