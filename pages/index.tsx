@@ -4,7 +4,6 @@ import Appbar from './Appbar'
 import Landing from './Landing'
 import AboutSection from './AboutSection';
 import FooterSection from './Footer';
-import WorkWithUsSection from './WorkwithUs';
 import Schedule from './Schedule';
 import { Typography, Button, Menu, MenuItem } from '@mui/material';
 import FAQs from './FAQs';
