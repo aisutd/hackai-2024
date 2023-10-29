@@ -17,7 +17,7 @@ function JoinSection()
                 src="ski-silhouette.png"
             />
             <img
-                className="absolute h-[18rem] -top-[13px] right-0"
+                className="absolute h-[18rem] -top-[12px] right-0"
                 src="ski-lift-silhouette.png"
             />
             <div className="flex flex-col items-center justify-center text-center z-10">
