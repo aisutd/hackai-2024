@@ -64,9 +64,6 @@ export default function HomePage() {
           <Partners/>
           <img width="100%" src="mountains.png" />
         </section>
-        <section id="work with us" className="relative">
-          <WorkWithUsSection/>
-        </section>
         <section id="join" className="relative">
           <JoinSection/>
         </section>

@@ -47,7 +47,7 @@ function AboutSection()
                             }}
                         >
                             <div className="text-xl md:text-2xl font-bold flex justify-center items-center md:justify-start md:items-start">
-                                <img src="brain.png" />
+                                <img src="brain.png" className="h-[35px]"/>
                                 <Typography fontFamily={"var(--PlacardNext)"} className="text-2xl md:text-3xl ml-2 mb-2">What is HackAI</Typography>
 
                             </div>
