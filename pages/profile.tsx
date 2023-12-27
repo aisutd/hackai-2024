@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import * as React from 'react';
+import { useRouter } from 'next/router';
 import Appbar from './Appbar'
 import Landing from './Landing'
 import AboutSection from './AboutSection';
@@ -12,20 +13,35 @@ import Footer from './Footer';
 import PastEvent from './PastEvent';
 import Snowfall from 'react-snowfall';
 
-export default function HomePage() {
+export default function Profile() {
   {/*for the appbar*/}
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
+  const router = useRouter();
+
+  //for hamburger on appbar
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
+
+  //for closing hamburger on appbar
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  //for profile/login button on appbar
+  const handleProfileClick = (path) => {
+    setAnchorEl(null);
+    router.push(path);
+  };
+
+  //for other appbar buttons
   const handleItemClick = (secName) => {
     setAnchorEl(null);
     document.getElementById(secName).scrollIntoView()
   };
+
+  const auth = false;
 
   return (
     <>
@@ -34,39 +50,41 @@ export default function HomePage() {
         <link rel="icon" type="image/svg+xml" href="/hai-logo.svg" />
         <meta
           name="description"
-          content="Welcome to HackAI: the biggest AI hackathon in Texas!"
+          content="Welcome to HackAI: the biggest AI hackathon in North Texas!"
         />
       </Head>
-      <main className="min-h-screen w-[100%] bg-hai-beige text-ais-white subpixel-antialiased overflow-x-hidden">
-        <section id="appbar" className="fixed h-[5rem] w-[100%] z-50 uppercase text-white font-bold text-xl">
+      <main className="min-h-screen bg-hai-beige font-oriya text-ais-white subpixel-antialiased overflow-x-hidden">
+        <section id="appbar" className="fixed z-50 uppercase text-white font-bold text-xl">
           <Appbar/>
         </section>
-        <section id="snow" className="fixed w-[100%] h-[100vh] z-40 [pointer-events:none]">
+        <section id="snow" className="fixed w-[100vw] h-[100vh] z-40 [pointer-events:none]">
           <Snow/>
         </section>
-        <section id="landing" className="relative h-[100vh] z-0">
-          <Landing/>
-        </section>
-        <section id="about" className="relative z-10">
-          <AboutSection/>
-        </section>
-        <section id="past-event">
-          <PastEvent/>
-        </section>
-        <section id="schedule" className="relative">
-          <Schedule />
-        </section>
-        <section id="faqs" className="relative bg-gradient-to-b from-hai-dark-blue to-hai-cloud">
-          <FAQs />
-        </section>
-        <section id="partners" className="relative bg-hai-cloud">
-          <Partners/>
-          <img width="100%" src="mountains.png" />
+        <section id="profile" className="relative w-[100vw] h-[100vh] pt-[5rem] z-0">
+          {auth ? profile() : login()}
         </section>
         <section id="footer" className="relative">
           <Footer/>
         </section>
       </main>
+    </>
+  );
+}
+
+function login()
+{
+  return (
+    <>
+      <div className="text-hai-navy">not authorized lol</div>
+    </>
+  );
+}
+
+function profile()
+{
+  return (
+    <>
+      <div className="text-hai-navy">authorized : )</div>
     </>
   );
 }

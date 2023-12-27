@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 import { Typography, Button, Menu, MenuItem } from '@mui/material';
 import { useScroll, animated } from 'react-spring'
 
@@ -7,30 +8,55 @@ export default function Landing() {
   {/*for the appbar*/}
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
+  const router = useRouter();
+  // const location = useLocation();
+
+  //for hamburger on appbar
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
+
+  //for closing hamburger on appbar
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  //for profile/login button on appbar
+  const handleProfileClick = (path) => {
+    setAnchorEl(null);
+    router.push(path);
+  };
+
+  //for other appbar buttons
   const handleItemClick = (secName) => {
     setAnchorEl(null);
-    document.getElementById(secName).scrollIntoView()
+
+    if(router.asPath === '/')
+    {
+      document.getElementById(secName).scrollIntoView();
+    }
+    else
+    {
+      router.push('/');
+      setTimeout(() => {
+        document.getElementById(secName).scrollIntoView();
+      }, 100);
+    }
   };
 
   return (
     <>
-      <div className="fixed z-20 backdrop-blur-sm text-hai-orange font-lucidity">
-        <div className="absolute bg-hai-beige opacity-80 w-[100vw] h-[5rem] -z-10"/>
-        <nav className="bg-none w-[100vw] h-[5rem] grid grid-cols-2 md:grid-cols-3 place-items-center">
-          <div onClick={() => {handleItemClick('landing')}} className="flex gap-4 items-center [cursor:pointer]">
-            <img src="hai-logo.png" className="h-[3rem] object-contain"/>
+      <div className="fixed w-[100%] h-[5rem] z-20 backdrop-blur-sm text-hai-orange font-placard text-[1.6rem] font-normal">
+        <div className="absolute bg-hai-beige opacity-80 w-[100%] h-[5rem] -z-10"/>
+        <nav className="bg-none w-[100%] h-[5rem] grid grid-cols-2 md:grid-cols-6 place-items-center">
+          <div onClick={() => {handleItemClick('landing')}} className="[cursor:pointer]">
+            <img src="hai-logo.png" className="h-[3.5rem] object-contain"/>
           </div>
-          <div className="gap-10 col-span-2 justify-self-start text-[1.5rem] font-normal hidden md:flex lg:col-span-1 lg:justify-self-center">
-            <div onClick={() => {handleItemClick('about')}} className="[cursor:pointer]">About</div>
-            <div onClick={() => {handleItemClick('schedule')}} className="[cursor:pointer]">Schedule</div>
-            <div onClick={() => {handleItemClick('faqs')}} className="[cursor:pointer]">Faqs</div>
-            <div onClick={() => {handleItemClick('partners')}} className="[cursor:pointer]">Partners</div>
+          <div className="gap-10 hidden col-span-4 md:flex">
+            <button onClick={() => { handleItemClick('about') }} className="[cursor:pointer] tracking-wide hover:underline">About</button>
+            <button onClick={() => { handleItemClick('schedule') }} className="[cursor:pointer] tracking-wide hover:underline">Schedule</button>
+            <button onClick={() => { handleItemClick('faqs') }} className="[cursor:pointer] tracking-wide hover:underline">Faqs</button>
+            <button onClick={() => { handleItemClick('partners') }} className="[cursor:pointer] tracking-wide hover:underline">Partners</button>
           </div>
           <div className="flex md:hidden">
             <Button
@@ -51,31 +77,35 @@ export default function Landing() {
                 'aria-labelledby': 'basic-button',
               }}
             >
-              <MenuItem onClick={() => {handleItemClick('about')}}>About</MenuItem>
+              <MenuItem onClick={() => {handleProfileClick('/profile')}}>Profile</MenuItem>
               <MenuItem onClick={() => {handleItemClick('schedule')}}>Schedule</MenuItem>
               <MenuItem onClick={() => {handleItemClick('faqs')}}>Faqs</MenuItem>
               <MenuItem onClick={() => {handleItemClick('partners')}}>Partners</MenuItem>
             </Menu>
           </div>
-          <div className="hidden lg:flex gap-4">
-            <button onClick={() => window.open("https://www.aisutd.org", "_blank")}>
-              <img src="www-icon.svg" className="h-[1.5rem] object-contain"/>
-            </button>
-            <button onClick={() => window.open("https://www.instagram.com/utdais", "_blank")}>
-              <img src="insta-icon.svg" className="h-[1.5rem] object-contain"/>
-            </button>
-            <button onClick={() => window.open("https://www.aisutd.org/discord", "_blank")}>
-              <img src="discord-icon.svg" className="h-[1.5rem] object-contain"/>
-            </button>
-            <button onClick={() => window.open("https://www.linkedin.com/company/ais-utd", "_blank")}>
-              <img src="linkedin-icon.svg" className="h-[1.5rem] object-contain"/>
-            </button>
-            <button onClick={() => window.open("https://www.youtube.com/@artificialintelligencesoci9846", "_blank")}>
-              <img src="yt-icon.svg" className="h-[1.5rem] object-contain"/>
-            </button>
+          <div className="hidden md:flex gap-4">
+            <ProfileButton
+              onClick={() => { handleProfileClick('/profile') }}
+              className=""/>
           </div>
         </nav>
       </div>
     </>
+  );
+}
+
+function ProfileButton(props)
+{
+  return (
+    <div className="
+      text-hai-orange hover:text-hai-beige hover:text-hai-beige
+    ">
+      <button onClick={props.onClick} className="
+        [cursor:pointer] py-[3px] px-[8px] rounded-[6px] tracking-wide
+        border-[2px] border-[#FFAA99] hover:bg-hai-orange
+      ">
+        Profile
+      </button>
+    </div>
   );
 }
