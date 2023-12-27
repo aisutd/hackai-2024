@@ -2,23 +2,34 @@ import React from 'react';
 
 function PastEvent() {
   return (
-    <div className="flex relative pb-[6rem]">
-      <div className="w-1/2 p-4 flex flex-col justify-center">
-        <h3 className="text-1xl text-hai-navy text-center my-8">Past Event</h3>
-        <h2 className="text-4xl font-bold text-hai-navy text-center">HACK AI 2023</h2>
-        <p className="text-lg text-hai-gray text-center p-10 pt-5">
-          Lorem ipsum dolor sit amet consectetur. Morbi consectetur habitant purus lacus a mauris elementum eleifend arcu. Sem purus tristique ut praesent adipiscing. Risus eget purus etiam ultrices cursus massa dolor. Ipsum condimentum nunc commodo eget imperdiet turpis. Sed mi lectus laoreet sodales egestas tempor mauris. Tellus in mi facilisi mauris nam ac sit elementum eget. Turpis pellentesque vulputate accumsan eget viverra gravida scelerisque.
-        </p>
-        <div className="relative z-0">
-          <img className="text-center mx-auto mt-10 mb-20 w-full md:w-9/12 z-0" src="/stats.png" alt="about hackai chips" />
+    <div className="
+      relative py-20 px-[10vw] gap-[10vw] items-center justify-items-center
+      flex flex-col sm:grid sm:grid-cols-2
+    ">
+      <div className="w-full flex flex-col justify-center">
+        <h2 className="
+          text-4xl font-bold text-hai-navy text-center font-placard tracking-widest
+        ">
+          HACK AI 2023
+        </h2>
+          <p className="hidden sm:block text-base text-hai-gray text-justify pt-10 font-roboto">
+            Last April, HackAI’s fourth iteration featured various guest speakers, workshops, and activities to engage students throughout the weekend.
+            <br/><br/>
+            Participants had the option of competing in four different tracks: athletes, brainiacs, saints, and creatives, each with their own tailored prompts.
+          </p>
+          <div className="h-10 hidden sm:block lg:hidden"/>
+          <p className="hidden lg:block text-base text-hai-gray text-justify pb-10 font-roboto">
+            <br/>
+            HackAI ‘23 saw a record 600+ applications from students of various majors and featured sponsorships from Amazon Web Services (AWS), the Dallas Mavericks, Geico, and more!
+          </p>
+        <div className="relative z-0 hidden sm:flex justify-center">
+          <img className="text-center w-full md:w-9/12 z-0" src="/stats.png" alt="about hackai chips"/>
         </div>
       </div>
-      <div className="w-1/2 p-20 pl-5 flex items-center">
-        <div className="mx-auto max-h-full max-w-full">
-          <img src="/placeholder.png" alt="Image" className="mx-auto" />
-        </div>
+      <img src="/hackers-photo.png" alt="Image" className="object-contain"/>
+      <div className="relative z-0 flex justify-center sm:hidden">
+        <img className="text-center w-full md:w-9/12 z-0" src="/stats.png" alt="about hackai chips" />
       </div>
-      <img src="/jagged-bottom.svg" className="absolute bottom-0 h-[6rem] w-[100vw] object-fill"/>
     </div>
   );
 }

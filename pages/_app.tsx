@@ -3,6 +3,9 @@ import Head from 'next/head';
 import 'tailwindcss/tailwind.css';
 import localFont from '@next/font/local';
 
+import Homepage from '.';
+import Profile from '.';
+
 /**
  * A wrapper for the root website component.
  */
@@ -67,7 +70,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           --roboto: ${roboto.style.fontFamily};
         }
       `}</style>
-      <Component {...pageProps} />
+        <Component {...pageProps} />
     </>
   );
 }

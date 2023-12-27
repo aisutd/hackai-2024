@@ -24,7 +24,9 @@ module.exports = {
           'light-blue':'#458EEC',
           navy:'#293039',
           gray:'#4F4F4F',
-          beige:'#FFF9F5'
+          beige:'#FFF9F5',
+          cloud:'#DCE7ED',
+          white: '#fafafa',
         }
       },
       backgroundSize: {
@@ -32,43 +34,14 @@ module.exports = {
         'extra-fill': '150% 150%',
       },
       screens: {
-        xs:'465px',
+        xs:'430px',
         med: '832px',
       },
     },
     css: {
       container: {
         display: 'flex',
-      },
-      card: {
-        position: 'relative',
-        width: '282px',
-        height: '426.08px',
-        margin: '10px',
-        perspective: '1000px',
-        front: {
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
-          'backface-visibility': 'hidden',
-        },
-        back: {
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
-          'backface-visibility': 'hidden',
-        },
-        front: {
-          //'transform': 'rotateX(0deg)',
-        },
-        back: {
-          //'transform': 'rotateX(0deg)',
-          //'filter': 'invert(100%)',
-        },
-        flip: {
-          //'transform': 'rotateX(0deg)',
-        },
-      },
+      }
     },
     fontFamily: {
       sans: ['IBM Plex Sans', 'sans-serif'],
