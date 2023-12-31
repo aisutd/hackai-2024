@@ -86,10 +86,35 @@ function Schedule() {
             />
             <div className="w-[50vw] pr-[5vw]">
               <TabPanel value="one">
-                sample text1
+                <pre>
+                  9:00am:{'\t\t'}Check In + Sponsor Fair<br />
+                  11:00am:{'\t'}Kickoff Ceremony (ECSW TI Auditorium)<br />
+                  12:00pm:{'\t'}Lunch + Hacking Starts (Location TBD)<br />
+                  1:30pm:{'\t\t'}2 orgs workshop<br />
+                  2:30pm:{'\t\t'}GEICO workshop<br />
+                  3:30pm:{'\t\t'}CAIML Workshop<br />
+                  4:30pm:{'\t\t'}Cartesi Workshop<br />
+                  5:30pm:{'\t\t'}BLP Workshop<br />
+                  6:30pm:{'\t\t'}2 orgs Workshop<br />
+                  7:30pm:{'\t\t'}Dinner<br />
+                  8:30pm:{'\t\t'}Social Event<br />
+                  9:00pm:{'\t\t'}Social Event<br />
+                  11:30pm:{'\t'}Late Night Snack (Location TBD)<br />
+                  11:59pm:{'\t'}Submit Dev Post
+                </pre>
               </TabPanel>
               <TabPanel value="two">
-                sample text2
+                <pre>
+                12:00am - 9:00am:{'\t'}Quiet hours<br />
+                8:00am:{'\t\t\t\t'}Breakfast (Location TBD)<br />
+                10:00am:{'\t\t\t'}How to Pitch Workshop<br />
+                11:00am - 12:30pm:{'\t'}Lunch (Location TBD)<br />
+                12:00pm:{'\t\t\t'}SUBMISSION<br />
+                1:00pm:{'\t\t\t\t'}Judging (Location TBD)<br />
+                4:00pm:{'\t\t\t\t'}Judging Finishes<br />
+                5:00pm:{'\t\t\t\t'}Closing Ceremony (Location TBD)<br />
+                6:00pm:{'\t\t\t\t'}Everyone leaves
+                </pre>
               </TabPanel>
             </div>
           </div>
