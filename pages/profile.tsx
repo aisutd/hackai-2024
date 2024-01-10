@@ -1,23 +1,19 @@
 import Head from 'next/head';
-import * as React from 'react';
+import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Appbar from './Appbar'
-import Landing from './Landing'
-import AboutSection from './AboutSection';
-import FooterSection from './Footer';
-import Schedule from './Schedule';
-import { Typography, Button, Menu, MenuItem } from '@mui/material';
-import FAQs from './FAQs';
-import Partners from './Partners';
 import Footer from './Footer';
-import PastEvent from './PastEvent';
 import Snowfall from 'react-snowfall';
+import { Coda } from 'coda-js';
 
 export default function Profile() {
   {/*for the appbar*/}
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const router = useRouter();
+  const [inputtedUsername, setUsername] = useState('');
+  const [inputtedPassword, setPassword] = useState('');
+  const [auth, setAuth] = useState(false);
 
   //for hamburger on appbar
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -41,7 +37,122 @@ export default function Profile() {
     document.getElementById(secName).scrollIntoView()
   };
 
-  const auth = false;
+  const handleLogin = async (e) => {
+    try {
+      const CodaAPI = new Coda(process.env.CODA_AUTH_API_KEY); 
+      const doc = await CodaAPI.getDoc('jyEelX25ju'); // Grab Event Tracking Doc from Coda API using the Doc ID at https://coda.io/developers/apis/v1
+      const table = await doc.getTable('Submissions'); // Grab the actual table from the doc
+      const rows = await table.listRows({ useColumnNames: true, valueFormat: 'rich' }); // Grab all the event entries in the doc
+      
+      console.log('hi');
+      for (let i = 0; i < rows.length; i++) {
+        console.log('hi1');
+        for (const netID of rows[i].values['Net ID'])
+          if (netID == inputtedUsername) {
+            if (rows[i].values['First Name'] == inputtedPassword) {
+              setAuth(true);
+              break;
+            } else {
+              alert('Invalid credentials');
+            }
+          }
+        }
+  }  catch (error) {
+      console.error('Login error', error);
+      alert('Login failed');
+    }
+  };
+  
+function login()
+{
+  return (
+    <>
+      <div className="text-black">not authorized lol</div>
+      <br/>
+      <form onSubmit={handleLogin}>
+        <input
+          className='text-black'
+          type="text"
+          placeholder="Username"
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <br/>
+        <br/>
+        <input
+          className='text-black'
+          type="password"
+          placeholder="Password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+
+        <br/>
+        <br/>
+
+        <button className="text-black" type="submit">Login</button>
+      </form>
+    </>
+  );
+}
+
+//need to verify that the password inputs match
+function signup()
+{
+  return (
+    <>
+      <form onSubmit={null}>
+        <input
+          className='text-black'
+          type="text"
+          placeholder="Username"
+        />
+        <br/>
+        <br/>
+        <input
+          className='text-black'
+          type="password"
+          placeholder="Password"
+        />
+
+        <br/>
+        <br/>
+
+        <input
+          className='text-black'
+          type="password"
+          placeholder="Confirm Password"
+        />
+
+        <br/>
+        <br/>
+
+        <button className="text-black" type="submit">Sign Up</button>
+      </form>
+    </>
+  );
+}
+
+function profile()
+{
+  return (
+    <>
+      <div className="text-hai-navy">authorized</div>
+    </>
+  );
+}
+
+function Snow()
+{
+  return (
+    <Snowfall
+      color="#FFFFFF"
+      radius={[0.5,3.0]}
+      snowflakeCount={150}
+      speed={[0.5,1.5]}
+      wind={[-0.3,0.7]}
+      rotationSpeed={[0,0]}
+    />
+  );
+}
 
   return (
     <>
@@ -68,37 +179,5 @@ export default function Profile() {
         </section>
       </main>
     </>
-  );
-}
-
-function login()
-{
-  return (
-    <>
-      <div className="text-hai-navy">not authorized lol</div>
-    </>
-  );
-}
-
-function profile()
-{
-  return (
-    <>
-      <div className="text-hai-navy">authorized : )</div>
-    </>
-  );
-}
-
-function Snow()
-{
-  return (
-    <Snowfall
-      color="#FFFFFF"
-      radius={[0.5,3.0]}
-      snowflakeCount={150}
-      speed={[0.5,1.5]}
-      wind={[-0.3,0.7]}
-      rotationSpeed={[0,0]}
-    />
   );
 }
