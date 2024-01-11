@@ -37,29 +37,42 @@ export default function Profile() {
     document.getElementById(secName).scrollIntoView()
   };
 
+  const waitForLogin = async (e)=> {
+    // TODO: Return actual event info
+    await handleLogin(e);
+  };
+
   const handleLogin = async (e) => {
-    try {
-      const CodaAPI = new Coda(process.env.CODA_AUTH_API_KEY); 
-      const doc = await CodaAPI.getDoc('jyEelX25ju'); // Grab Event Tracking Doc from Coda API using the Doc ID at https://coda.io/developers/apis/v1
-      const table = await doc.getTable('Submissions'); // Grab the actual table from the doc
-      const rows = await table.listRows({ useColumnNames: true, valueFormat: 'rich' }); // Grab all the event entries in the doc
-      
-      console.log('hi');
-      for (let i = 0; i < rows.length; i++) {
-        console.log('hi1');
-        for (const netID of rows[i].values['Net ID'])
-          if (netID == inputtedUsername) {
-            if (rows[i].values['First Name'] == inputtedPassword) {
-              setAuth(true);
-              break;
-            } else {
-              alert('Invalid credentials');
-            }
-          }
-        }
-  }  catch (error) {
-      console.error('Login error', error);
+
+    if (inputtedPassword == '' || inputtedUsername == '') {
       alert('Login failed');
+    } else {
+      try {
+        console.log(e);
+        const CodaAPI = new Coda(process.env.CODA_AUTH_API_KEY); 
+        console.log('API');
+        const doc = await CodaAPI.getDoc('jyEelX25ju'); // Grab Event Tracking Doc from Coda API using the Doc ID at https://coda.io/developers/apis/v1
+        console.log('DOCS');
+        const table = await doc.getTable('Submissions'); // Grab the actual table from the doc
+        console.log('TABLE');
+        const rows = await table.listRows({ useColumnNames: true, valueFormat: 'rich' }); // Grab all the event entries in the doc
+        console.log('ROWS');
+        for (let i = 0; i < rows.length; i++) {
+          console.log('hi1');
+          for (const netID of rows[i].values['Net ID'])
+            if (netID == inputtedUsername) {
+              if (rows[i].values['First Name'] == inputtedPassword) {
+                setAuth(true);
+              } else {
+                alert('Invalid credentials');
+              }
+            }
+          console.log(rows[i].values['Net ID'], inputtedUsername, rows[i].values['First Name'] , inputtedPassword)
+        }
+      } catch (error) {
+        console.error('Login error', error);
+        alert('Login failed');
+      }
     }
   };
   
@@ -69,7 +82,6 @@ function login()
     <>
       <div className="text-black">not authorized lol</div>
       <br/>
-      <form onSubmit={handleLogin}>
         <input
           className='text-black'
           type="text"
@@ -88,8 +100,7 @@ function login()
         <br/>
         <br/>
 
-        <button className="text-black" type="submit">Login</button>
-      </form>
+        <button onClick={waitForLogin} className="text-black" type="submit">Login</button>
     </>
   );
 }
