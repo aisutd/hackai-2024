@@ -49,7 +49,7 @@ export default function Profile() {
     } else {
       try {
         console.log(e);
-        const CodaAPI = new Coda(process.env.CODA_AUTH_API_KEY); 
+        const CodaAPI = new Coda(process.env.NEXT_PUBLIC_CODA_PROFILE_API_KEY); 
         console.log('API');
         const doc = await CodaAPI.getDoc('jyEelX25ju'); // Grab Event Tracking Doc from Coda API using the Doc ID at https://coda.io/developers/apis/v1
         console.log('DOCS');
@@ -59,15 +59,16 @@ export default function Profile() {
         console.log('ROWS');
         for (let i = 0; i < rows.length; i++) {
           console.log('hi1');
-          for (const netID of rows[i].values['Net ID'])
-            if (netID == inputtedUsername) {
-              if (rows[i].values['First Name'] == inputtedPassword) {
+            if (rows[i].values['Net ID'].replace(/```/gi, '') === inputtedUsername) {
+              if (rows[i].values['First Name'].replace(/```/gi, '') === inputtedPassword) {
                 setAuth(true);
+                console.log("TRUE");
               } else {
                 alert('Invalid credentials');
               }
+              console.log("HI");
+          console.log(rows[i].values['Net ID'].replace(/```/gi, ''), inputtedUsername, rows[i].values['First Name'].replace(/```/gi, ''), inputtedPassword);
             }
-          console.log(rows[i].values['Net ID'], inputtedUsername, rows[i].values['First Name'] , inputtedPassword)
         }
       } catch (error) {
         console.error('Login error', error);
@@ -76,6 +77,7 @@ export default function Profile() {
     }
   };
   
+
 function login()
 {
   return (
