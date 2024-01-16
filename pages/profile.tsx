@@ -85,14 +85,14 @@ export default function Profile() {
     setUserFirstName(allRows[index].values['First Name'].replace(/```/gi, ''));
     setUserLastName(allRows[index].values['Last Name'].replace(/```/gi, ''));
     setUserYear(allRows[index].values['Year'].replace(/```/gi, ''));
-    //setUserMajor(allRows[index].values['Major'].replace(/```/gi, ''));
-    //setUserAppAccept(allRows[index].values['Accept'].replace(/```/gi, ''));
-    //setUserAppReject(allRows[index].values['Reject'].replace(/```/gi, ''));
-    //setUserQRCode(allRows[index].values['QR Code'].replace(/```/gi, ''));
+    setUserMajor(allRows[index].values['Major'][0].name);
+    //setUserAppAccept(allRows[index].values['Accept']);
+    //setUserAppReject(allRows[index].values['Reject']);
+    setUserQRCode(allRows[index].values['QR Code URL'].url);
   
-    if (userAppAccept) {
+    if (allRows[index].values['Accept']) {
       setUserAppStatus("Accepted");
-    } else if (userAppReject) {
+    } else if (allRows[index].values['Reject']) {
       setUserAppStatus("Rejected");
     } else {
       setUserAppStatus("Pending");
@@ -166,10 +166,13 @@ export default function Profile() {
           <span className='font-bold'> Year: </span> {userYear}
         </div>
         <div className="text-black mb-2">
+          <span className='font-bold'> Major: </span> {userMajor}
+        </div>
+        <div className="text-black mb-2">
           <span className='font-bold'>Application Status: </span> {userAppStatus}
         </div>
         <div className="text-black mb-2">
-          <span className='font-bold'>QR Code: </span> {userQRCode ? userQRCode : 'coming soon'}
+          <span className='font-bold'>QR Code: </span> {userQRCode ? <img src={userQRCode} alt="QR Code"/> : 'coming soon'}
         </div>
         <button onClick={() => signout()}  className="text-white bg-black rounded-xl px-4" type="submit">Log Out</button>
       </div>
