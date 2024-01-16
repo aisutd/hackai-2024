@@ -15,6 +15,16 @@ export default function Profile() {
   const [inputtedPassword, setPassword] = useState('');
   const [auth, setAuth] = useState(false);
 
+  const [userID, setUserID] = useState('');
+  const [userFirstName, setUserFirstName] = useState('');
+  const [userLastName, setUserLastName] = useState('');
+  const [userYear, setUserYear] = useState('');
+  const [userMajor, setUserMajor] = useState('');
+  const [userAppAccept, setUserAppAccept] = useState(false);
+  const [userAppReject, setUserAppReject] = useState(false);
+  const [userQRCode, setUserQRCode] = useState('');
+  const [userAppStatus, setUserAppStatus] = useState('');
+
   //for hamburger on appbar
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
@@ -37,8 +47,7 @@ export default function Profile() {
     document.getElementById(secName).scrollIntoView()
   };
 
-  const waitForLogin = async (e)=> {
-    // TODO: Return actual event info
+  const waitForLogin = async (e) => {
     await handleLogin(e);
   };
 
@@ -48,26 +57,21 @@ export default function Profile() {
       alert('Login failed');
     } else {
       try {
-        console.log(e);
-        const CodaAPI = new Coda(process.env.CODA_AUTH_API_KEY); 
-        console.log('API');
+        const CodaAPI = new Coda(process.env.NEXT_PUBLIC_CODA_PROFILE_API_KEY); 
         const doc = await CodaAPI.getDoc('jyEelX25ju'); // Grab Event Tracking Doc from Coda API using the Doc ID at https://coda.io/developers/apis/v1
-        console.log('DOCS');
         const table = await doc.getTable('Submissions'); // Grab the actual table from the doc
-        console.log('TABLE');
         const rows = await table.listRows({ useColumnNames: true, valueFormat: 'rich' }); // Grab all the event entries in the doc
-        console.log('ROWS');
-        for (let i = 0; i < rows.length; i++) {
-          console.log('hi1');
-          for (const netID of rows[i].values['Net ID'])
-            if (netID == inputtedUsername) {
-              if (rows[i].values['First Name'] == inputtedPassword) {
+        if (rows && rows.length > 0) {
+          for (var i = 0; i < rows.length; i++) {
+            if (rows[i].values['Net ID'].replace(/```/gi, '') === inputtedUsername) {
+              if (rows[i].values['First Name'].replace(/```/gi, '') === inputtedPassword) {
                 setAuth(true);
+                getUserInfo(i, rows);
               } else {
                 alert('Invalid credentials');
               }
             }
-          console.log(rows[i].values['Net ID'], inputtedUsername, rows[i].values['First Name'] , inputtedPassword)
+          }
         }
       } catch (error) {
         console.error('Login error', error);
@@ -76,94 +80,115 @@ export default function Profile() {
     }
   };
   
-function login()
-{
-  return (
-    <>
-      <div className="text-black">not authorized lol</div>
-      <br/>
-        <input
-          className='text-black'
-          type="text"
-          placeholder="Username"
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <br/>
-        <br/>
-        <input
-          className='text-black'
-          type="password"
-          placeholder="Password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
+  function getUserInfo(index, allRows) {
+    setUserID(allRows[index].values['Net ID'].replace(/```/gi, ''));
+    setUserFirstName(allRows[index].values['First Name'].replace(/```/gi, ''));
+    setUserLastName(allRows[index].values['Last Name'].replace(/```/gi, ''));
+    setUserYear(allRows[index].values['Year'].replace(/```/gi, ''));
+    //setUserMajor(allRows[index].values['Major'].replace(/```/gi, ''));
+    //setUserAppAccept(allRows[index].values['Accept'].replace(/```/gi, ''));
+    //setUserAppReject(allRows[index].values['Reject'].replace(/```/gi, ''));
+    //setUserQRCode(allRows[index].values['QR Code'].replace(/```/gi, ''));
+  
+    if (userAppAccept) {
+      setUserAppStatus("Accepted");
+    } else if (userAppReject) {
+      setUserAppStatus("Rejected");
+    } else {
+      setUserAppStatus("Pending");
+    }
+  }
 
+  function login()
+  {
+    return (
+      <div className='m-8'>
         <br/>
-        <br/>
+          <input
+            className='text-black'
+            type="text"
+            placeholder="Username"
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <br/>
+          <br/>
+          <input
+            className='text-black'
+            type="password"
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
-        <button onClick={waitForLogin} className="text-black" type="submit">Login</button>
-    </>
-  );
-}
+          <br/>
+          <br/>
 
-//need to verify that the password inputs match
-function signup()
-{
-  return (
-    <>
-      <form onSubmit={null}>
-        <input
-          className='text-black'
-          type="text"
-          placeholder="Username"
-        />
-        <br/>
-        <br/>
-        <input
-          className='text-black'
-          type="password"
-          placeholder="Password"
-        />
+          <button onClick={waitForLogin} className="text-white bg-black rounded-xl px-4 mb-8" type="submit">Login</button>
 
-        <br/>
-        <br/>
+          <br/>
 
-        <input
-          className='text-black'
-          type="password"
-          placeholder="Confirm Password"
-        />
+          <button onClick={() => window.open('https://coda.io/form/HackAI-2024-Application-Form_dpLYWJ67GbP')} className="text-white bg-black rounded-xl px-4">Sign Up</button>
 
-        <br/>
-        <br/>
+      </div>
+    );
+  }
 
-        <button className="text-black" type="submit">Sign Up</button>
-      </form>
-    </>
-  );
-}
+  function signout()
+  {
+    setAuth(false);
+    setUsername('');
+    setPassword('');
+    setAuth(false);
+    setUserID('');
+    setUserFirstName('');
+    setUserLastName('');
+    setUserYear('');
+    setUserMajor('');
+    setUserAppAccept(false);
+    setUserAppReject(false);
+    setUserQRCode('');
+    setUserAppStatus('');
+  }
 
-function profile()
-{
-  return (
-    <>
-      <div className="text-hai-navy">authorized</div>
-    </>
-  );
-}
+  function profile()
+  {
+    return (
+      <div className='m-8'>
+        <div className="text-black mb-2">
+          <span className='font-bold'>First Name: </span> {userFirstName}
+        </div>
+        <div className="text-black mb-2">
+          <span className='font-bold'>Last Name: </span> {userLastName}
+        </div>
+        <div className="text-black mb-2">
+         <span className='font-bold'>Net ID: </span> {userID}
+        </div>
+        <div className="text-black mb-2">
+          <span className='font-bold'> Year: </span> {userYear}
+        </div>
+        <div className="text-black mb-2">
+          <span className='font-bold'>Application Status: </span> {userAppStatus}
+        </div>
+        <div className="text-black mb-2">
+          <span className='font-bold'>QR Code: </span> {userQRCode ? userQRCode : 'coming soon'}
+        </div>
+        <button onClick={() => signout()}  className="text-white bg-black rounded-xl px-4" type="submit">Log Out</button>
+      </div>
+    );
+  }
 
-function Snow()
-{
-  return (
-    <Snowfall
-      color="#FFFFFF"
-      radius={[0.5,3.0]}
-      snowflakeCount={150}
-      speed={[0.5,1.5]}
-      wind={[-0.3,0.7]}
-      rotationSpeed={[0,0]}
-    />
-  );
-}
+  function Snow()
+  {
+    return (
+      <Snowfall
+        color="#FFFFFF"
+        radius={[0.5,3.0]}
+        snowflakeCount={150}
+        speed={[0.5,1.5]}
+        wind={[-0.3,0.7]}
+        rotationSpeed={[0,0]}
+      />
+    );
+  }
 
   return (
     <>
