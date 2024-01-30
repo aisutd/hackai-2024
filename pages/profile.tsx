@@ -11,10 +11,13 @@ export default function Profile() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const router = useRouter();
+
+  //authentication variables
   const [inputtedUsername, setUsername] = useState('');
   const [inputtedPassword, setPassword] = useState('');
   const [auth, setAuth] = useState(false);
 
+  //profile variables
   const [userID, setUserID] = useState('');
   const [userFirstName, setUserFirstName] = useState('');
   const [userLastName, setUserLastName] = useState('');
@@ -51,16 +54,20 @@ export default function Profile() {
     await handleLogin(e);
   };
 
+  //authentication login credentials
   const handleLogin = async (e) => {
-
+    //check for empty fields
     if (inputtedPassword == '' || inputtedUsername == '') {
       alert('Login failed');
     } else {
       try {
+        //get coda table data
         const CodaAPI = new Coda(process.env.NEXT_PUBLIC_CODA_PROFILE_API_KEY); 
         const doc = await CodaAPI.getDoc('jyEelX25ju'); // Grab Event Tracking Doc from Coda API using the Doc ID at https://coda.io/developers/apis/v1
         const table = await doc.getTable('Submissions'); // Grab the actual table from the doc
         const rows = await table.listRows({ useColumnNames: true, valueFormat: 'rich' }); // Grab all the event entries in the doc
+        
+        //check whether username and password are valid
         if (rows && rows.length > 0) {
           for (var i = 0; i < rows.length; i++) {
             if (rows[i].values['Net ID'].replace(/```/gi, '') === inputtedUsername) {
@@ -81,6 +88,8 @@ export default function Profile() {
   };
   
   function getUserInfo(index, allRows) {
+    //set all profile variables
+    //remove extra characterws form them
     setUserID(allRows[index].values['Net ID'].replace(/```/gi, ''));
     setUserFirstName(allRows[index].values['First Name'].replace(/```/gi, ''));
     setUserLastName(allRows[index].values['Last Name'].replace(/```/gi, ''));
@@ -90,6 +99,7 @@ export default function Profile() {
     //setUserAppReject(allRows[index].values['Reject']);
     setUserQRCode(allRows[index].values['QR Code URL'].url);
   
+    //set whether applicant was accepted or rejected
     if (allRows[index].values['Accept']) {
       setUserAppStatus("Accepted");
     } else if (allRows[index].values['Reject']) {
@@ -132,6 +142,7 @@ export default function Profile() {
     );
   }
 
+  //reset all auth and profile vars to default state when logged out
   function signout()
   {
     setAuth(false);
@@ -179,6 +190,7 @@ export default function Profile() {
     );
   }
 
+  //snow animation
   function Snow()
   {
     return (
