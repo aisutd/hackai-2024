@@ -1,5 +1,5 @@
-# AIS Organization Website
-*Everything you want and more about the Artificial Intelligence Society at UTD*
+# HackAI 2024 Website
+Sadly, this was never launched. However, the Tech Tank website is mostly the exact same, and it is located in the tech-tank branch or this repo. Tech Tank was our pivot event that replaced HackAI in 2024. 
 
 ## Development
 This project is built using [NextJS](https://nextjs.org/), a React framework
