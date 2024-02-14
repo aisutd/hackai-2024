@@ -62,12 +62,13 @@ export default function Profile() {
     } else {
       try {
         //get coda table data
-        const CodaAPI = new Coda(process.env.NEXT_PUBLIC_CODA_PROFILE_API_KEY); 
-        const doc = await CodaAPI.getDoc('jyEelX25ju'); // Grab Event Tracking Doc from Coda API using the Doc ID at https://coda.io/developers/apis/v1
+        const CodaAPI = new Coda(process.env.NEXT_PUBLIC_CODA_AUTH_API_KEY); 
+        const doc = await CodaAPI.getDoc('jyEelX25ju'); // Grab HackAI Application Doc from Coda API using the Doc ID at https://coda.io/developers/apis/v1
         const table = await doc.getTable('Submissions'); // Grab the actual table from the doc
         const rows = await table.listRows({ useColumnNames: true, valueFormat: 'rich' }); // Grab all the event entries in the doc
         
         //check whether username and password are valid
+        //note for future years: this code is not secure since it stores the rows in the browser, so please change it
         if (rows && rows.length > 0) {
           for (var i = 0; i < rows.length; i++) {
             if (rows[i].values['Net ID'].replace(/```/gi, '') === inputtedUsername) {
@@ -190,20 +191,20 @@ export default function Profile() {
     );
   }
 
-  //snow animation
-  function Snow()
-  {
-    return (
-      <Snowfall
-        color="#FFFFFF"
-        radius={[0.5,3.0]}
-        snowflakeCount={150}
-        speed={[0.5,1.5]}
-        wind={[-0.3,0.7]}
-        rotationSpeed={[0,0]}
-      />
-    );
-  }
+  //snow animation disabled on this page to prevent interfering with a qr code scan (interpreting as wrong link due to covering a single pixel)
+  // function Snow()
+  // {
+  //   return (
+  //     <Snowfall
+  //       color="#FFFFFF"
+  //       radius={[0.5,3.0]}
+  //       snowflakeCount={150}
+  //       speed={[0.5,1.5]}
+  //       wind={[-0.3,0.7]}
+  //       rotationSpeed={[0,0]}
+  //     />
+  //   );
+  // }
 
   return (
     <>
@@ -220,7 +221,7 @@ export default function Profile() {
           <Appbar/>
         </section>
         <section id="snow" className="fixed w-[100vw] h-[100vh] z-40 [pointer-events:none]">
-          <Snow/>
+          {/*<Snow/>*/}
         </section>
         <section id="profile" className="relative w-[100vw] h-[100vh] pt-[5rem] z-0">
           {auth ? profile() : login()}
