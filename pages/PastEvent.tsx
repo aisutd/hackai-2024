@@ -23,12 +23,12 @@ function PastEvent() {
             HackAI ‘23 saw a record 600+ applications from students of various majors and featured sponsorships from Amazon Web Services (AWS), the Dallas Mavericks, Geico, and more!
           </p>
         <div className="relative z-0 hidden sm:flex justify-center">
-          <img className="text-center w-full md:w-9/12 z-0" src="/stats.png" alt="about hackai chips"/>
+          <img className="text-center w-full md:w-9/12 z-0" src="/newstats.png" alt="about hackai chips"/>
         </div>
       </div>
       <img src="/hackers-photo.png" alt="Image" className="object-contain"/>
       <div className="relative z-0 flex justify-center sm:hidden">
-        <img className="text-center w-full md:w-9/12 z-0" src="/stats.png" alt="about hackai chips" />
+        <img className="text-center w-full md:w-9/12 z-0" src="/newstats.png" alt="about hackai chips" />
       </div>
     </div>
   );
