@@ -1,11 +1,11 @@
 import { Box, Typography, useMediaQuery, Paper } from "@mui/material";
 import "@fontsource/hind-siliguri";
-
+import Footer from './Footer'; 
 const sponsorDir = "sponsers"
 const sponsorLogos = [["mavs-logo.png", "AWS_logo_RGB.svg", "RISE1.png"],
             ["Jasper.svg", "richardson-iq-logo.png", "geico.svg"], 
             ["respell.svg", "TT.svg",  "Blackstone.png" ],
-            ["JSOM.svg", "CAIML.svg", "re-vvive-logo.png"] ]
+            ["JSOM.svg", "CAIML.svg", "re-vvive-logo.png"] ]   
 const sponsorLinks =  [
               "https://www.mavs.com/",
               "https://aws.amazon.com/machine-learning/",
@@ -54,12 +54,14 @@ function displaySponsors() {
 function Partners() {
   return (
     <div className="pt-[5rem] flex flex-col items-center">
-      <div className="
-        w-[75vw] max-w-[1024px] 
-        p-[2rem]
-        flex flex-col items-center
-        bg-[url('/glass.svg')] bg-no-repeat bg-fill
-      ">
+      <div
+        className="
+          w-[75vw] max-w-[1024px] 
+          p-[1rem]
+          flex flex-col items-center
+          bg-[url('/glass.svg')] bg-no-repeat bg-fill "
+          style={{ backgroundSize: '80%', paddingBottom:0 }} // Adjust the paddingBottom to zero
+      >
         <Typography className="pt-[1rem] pb-[3rem] xs:pb-[4rem] text-5xl font-placard tracking-widest font-bold text-hai-navy text-center">
           PAST PARTNERS
         </Typography>
@@ -70,5 +72,6 @@ function Partners() {
     </div>
   );
 }
+
 
 export default Partners;

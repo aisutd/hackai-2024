@@ -61,7 +61,6 @@ export default function HomePage() {
         </section>
         <section id="partners" className="relative bg-hai-cloud">
           <Partners/>
-          <img width="100%" src="mountains.png" />
         </section>
         <section id="footer" className="relative">
           <Footer/>
