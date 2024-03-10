@@ -8,7 +8,6 @@ import Schedule from './Schedule';
 import { Typography, Button, Menu, MenuItem } from '@mui/material';
 import FAQs from './FAQs';
 import Partners from './Partners';
-import Footer from './Footer';
 import PastEvent from './PastEvent';
 import Snowfall from 'react-snowfall';
 
@@ -37,7 +36,7 @@ export default function HomePage() {
           content="Welcome to HackAI: the biggest AI hackathon in Texas!"
         />
       </Head>
-      <main className="min-h-screen w-[100%] bg-hai-beige text-ais-white subpixel-antialiased overflow-x-hidden">
+      <main className="min-h-screen w-[100%] bg-hai-beige text-ais-white subpixel-antialiased overflow-x-hidden z-0">
         <section id="appbar" className="fixed h-[5rem] w-[100%] z-50 uppercase text-white font-bold text-xl">
           <Appbar/>
         </section>
@@ -59,11 +58,9 @@ export default function HomePage() {
         <section id="faqs" className="relative bg-gradient-to-b from-hai-dark-blue to-hai-cloud">
           <FAQs />
         </section>
-        <section id="partners" className="relative bg-hai-cloud">
+        {/*footer is inside this section*/}
+        <section id="partners" className="">
           <Partners/>
-        </section>
-        <section id="footer" className="relative">
-          <Footer/>
         </section>
       </main>
     </>
