@@ -47,9 +47,13 @@ module.exports = {
       sans: ['IBM Plex Sans', 'sans-serif'],
       cairo: ['Cairo', 'sans-serif'],
       hind: ['Hind Siliguri'],
-      lucidity: ['var(--lucidity)'],
       placard: ['var(--placard)'],
-      roboto: ['var(--roboto)']
+      roboto: ['var(--roboto)'],
+      fredoka: ['var(--fredoka)'],
+      primer: ['var(--primer)'],
+      lucidity: ['var(--lucidity)'],
+      campground: ['var(--campground)'],
+      cooper: ['var(--cooper)']
     },
   },
   variants: {

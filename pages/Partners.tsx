@@ -23,7 +23,7 @@ const sponsorLinks =  [
 const sponsorPaths = sponsorLogos.map((row) => row.map((path) => sponsorDir + '/' + path))
 
 function displaySponsors() {
-  const mobile = useMediaQuery('(max-width:1023px)')
+  const mobile = useMediaQuery('(max-width:1023.99px)')
 
   return (
     sponsorPaths.map((row, rowIndex) => {
@@ -42,7 +42,7 @@ function displaySponsors() {
             <img
               src={imgPath}
               onClick={() => window.open(sponsorLinks[rowIndex*3 + colIndex], "_blank")}
-              className="object-contain [cursor:pointer] h-[20vh] w-[40vw] sm:w-[30vw] lg:w-[20vw] p-[5px]"
+              className="object-contain [cursor:pointer] h-[15vh] w-[80%] sm:w-[80%] lg:w-[30%] p-[5px]"
             />
           )}
         </Box>
@@ -53,23 +53,31 @@ function displaySponsors() {
 
 function Partners() {
   return (
-    <div className="pt-[5rem] flex flex-col items-center">
-      <div
-        className="
-          w-[75vw] max-w-[1024px] 
-          p-[1rem]
-          flex flex-col items-center
-          bg-[url('/glass.svg')] bg-no-repeat bg-fill "
-          style={{ backgroundSize: '80%', paddingBottom:0 }} // Adjust the paddingBottom to zero
-      >
-        <Typography className="pt-[1rem] pb-[3rem] xs:pb-[4rem] text-5xl font-placard tracking-widest font-bold text-hai-navy text-center">
-          PAST PARTNERS
-        </Typography>
-        <div className="flex flex-col w-[100%]">
-          {displaySponsors()}
+    <>
+    <section id="partners" className="relative bg-hai-cloud">
+      <div className="pt-[5rem] flex flex-col items-center">
+        <div
+          className="
+            w-[75vw] max-w-[1024px] 
+            p-[1rem] pb-[3rem]
+            flex flex-col items-center
+            bg-[url('/glass.svg')] bg-no-repeat bg-fill
+            backdrop-blur-[2px] z-20
+            "
+        >
+          <Typography className="pt-[1rem] pb-[3rem] xs:pb-[4rem] text-5xl font-placard tracking-widest font-bold text-hai-navy text-center">
+            PAST PARTNERS
+          </Typography>
+          <div className="flex flex-col w-[100%]">
+            {displaySponsors()}
+          </div>
         </div>
       </div>
-    </div>
+      </section>
+      <section id="footer" className="relative z-10">
+        <Footer/>
+      </section>
+    </>
   );
 }
 
