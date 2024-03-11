@@ -1,66 +1,57 @@
 import * as React from 'react'; 
 import { useRef } from "react";
 import { useInView } from "framer-motion";
-import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
-import { Box, Button, TextField, Typography } from '@mui/material';
-import "@fontsource/hind-siliguri";
+import { Button } from '@mui/material';
 
-function Footer()
-{
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
 
+function Footer() {
   return (
-  
-    <div className="bg-hai-navy mx-auto py-20 sm:px-[5vw] md:px-20 text-white">
-      <div className="text-center items-center justify-between flex flex-col gap-[1.25rem] sm:flex-row sm:text-left">
-        <div>
-          <Typography className="font-placard text-5xl font-bold tracking-widest">
-            HackAI
-          </Typography>
-          <Typography className="font-roboto text-lg">
-            Demystifying Artificial Intelligence
-          </Typography>
-        </div>
-        
-        <div className="flex flex-col font-roboto text-md text-center gap-1">
-          Connect with us!
-          <div className="flex gap-2 place-items-center">
-            <button
-              onClick={() => window.open("https://www.aisutd.org", "_blank")}
-              className="h-[1.5rem] w-[1.5rem]"
-            >
-              <img src="internet-globe.svg" className="object-contain"/>
-            </button>
-            <button
-              onClick={() => window.open("https://www.instagram.com/utdais", "_blank")}
-              className="h-[1.5rem] w-[1.5rem]"
-            >
-              <img src="instagram.svg" className="object-contain"/>
-            </button>
-            <button
-              onClick={() => window.open("https://www.aisutd.org/discord", "_blank")}
-              className="h-[1.5rem] w-[1.5rem]"
-            >
-              <img src="discord.svg" className="object-contain"/>
-            </button>
-            <button
-              onClick={() => window.open("https://www.linkedin.com/company/ais-utd", "_blank")}
-              className="h-[1.5rem] w-[1.5rem]"
-            >
-              <img src="linkedin.svg" className="object-contain"/>
-            </button>
-            <button
-              onClick={() => window.open("https://www.youtube.com/@artificialintelligencesoci9846", "_blank")}
-              className="h-[1.5rem] w-[1.5rem]"
-            >
-              <img src="youtube.svg" className="object-contain"/>
-            </button>
-          </div>
-        </div>
+    <div className="relative -mt-[37vw] -z-10">
+      <div className="
+        w-[100vw] h-[100vw] pointer-events-none
+        bg-[url('/CorrectFooter.png')] bg-contain bg-no-repeat
+      "/>
+      <div className="absolute top-[63.5vw] w-[100vw] items-center flex flex-col gap-[1vw]">
+        <h1 className="ml-[0.7%] text-hai-orange text-[6vw] leading-none font-fredoka mb-[0.5vw]">Tech Tank</h1>
+        <img src="/footer-2024-sign-bar.png" className="ml-[0.7%] w-[30%] h-auto"/>
+        <img src="/see-you-on-the-slopes.png" className="ml-[0.7%] w-[30%] h-auto"/>
+      </div>
+
+      {/*footer icons and register button*/}
+      <div className="absolute w-[100%] bottom-0 flex justify-center items-center gap-[5vw] mb-[2vw]">
+        <FooterIcon src="/www-icon.svg" link="https://www.aisutd.org" />
+        <FooterIcon src="/email-icon.svg" link="mailto:president@aisociety.io" />
+        <FooterIcon src="/insta-icon.svg" link="https://www.instagram.com/utdais" />
+        <button onClick={() => window.open("https://coda.io/form/HackAI-2024-Application-Form_dpLYWJ67GbP", "_blank")} className="
+          bg-white text-hai-orange font-roboto font-bold uppercase border-hai-orange hover:scale-[1.07] shadow-md border-[3px]
+          w-[28vw] h-[8vw] rounded-[1.6vw] text-[2.6vw]
+          sm:w-[20vw] sm:h-[6vw] sm:rounded-[1.2vw] sm:text-[2vw]
+          md:w-[12rem] md:h-[3rem] md:rounded-[0.7rem] md:text-[1.1rem]
+        ">
+          Register Now
+        </button>
+        <FooterIcon src="/yt-icon.svg" link="https://www.youtube.com/@artificialintelligencesoci9846" />
+        <FooterIcon src="/linkedin-icon.svg" link="https://www.linkedin.com/company/ais-utd" />
+        <FooterIcon src="/discord-icon.svg" link="https://www.aisutd.org/discord" />
       </div>
     </div>
-  )
+  );
 }
 
 export default Footer;
+
+function FooterIcon({ src, link })
+{
+  return(
+  <>
+    <button onClick={() => window.open(link, "_blank")} className="
+      h-[5vw] w-[5vw]
+      sm:h-[4vw] sm:w-[4vw]
+      md:h-[3vw] md:w-[3vw]
+      max-h-[2rem] max-w-[2rem]
+    ">
+      <img src={src} className="object-contain w-full h-full" />
+    </button>
+  </>
+  );
+}

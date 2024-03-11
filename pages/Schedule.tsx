@@ -7,118 +7,42 @@ import { TabPanel as BaseTabPanel } from '@mui/base/TabPanel';
 import { Tab as BaseTab, tabClasses } from '@mui/base/Tab';
 
 function Schedule() {
-  const [value, setValue] = React.useState('one');
-  const handleChange = () => {
-    setValue(value === 'one' ? 'two' : 'one');
-  };
-
-  const Tab = styled(BaseTab)`
-    &.${tabClasses.root} {
-    font-family: var(--roboto);
-    background-color: #293039; /*hai-black*/
-    color: #FAFAFA; /*hai-white*/
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-    height: 30px;
-    width: 100%;
-    line-height: 1.5;
-    border-radius: 15px 15px 0px 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    }
-
-    :hover {
-      height: 40px;
-    }
-
-    &.${tabClasses.selected} {
-      height: 40px;
-      background-color: #FAFAFA; /*hai-white*/
-      color: #293039; /*hai-black*/
-      z-index: 10;
-      ${value === 'one' ? 'margin-right: -20px;' : 'margin-left: -20px;' }
-    }
-  `;
-
-  const TabPanel = styled(BaseTabPanel)`
-    width: 50%;
-    font-family: var(--roboto);
-    font-size: 14px;
-  `;
-
-  const TabsList = styled(BaseTabsList)`
-    display: flex;
-    align-items: end;
-    justify-content: center;
-  `;
-
   return (
     <>
-      <div className="pt-[5rem] justify-center bg-hai-dark-blue">
-        <Tabs defaultValue="one" onChange={handleChange}>
-          <div className="flex flex-col text-center">
-            <Typography className="mb-[4px] text-xl md:text-5xl font-bold font-placard tracking-wider">
-              SCHEDULE
-            </Typography>
-            <Typography className="text-lg font-roboto underline tracking-wide">
-              <a
-                target="_blank"
-                href="https://aisutd.notion.site/aisutd/HackAI-Hacker-Guide-1a42a12a713341dd9e9c7200054fee47"
-              >
-                Click for 2023 Hacker Guide
-              </a>
-            </Typography>
-            <TabsList className="self-center w-[60vw] my-[12px]">
-              <Tab value="one">
-                Saturday
-              </Tab>
-              <Tab value="two">
-                Sunday
-              </Tab>
-            </TabsList>
+      <div className="pt-[5rem] justify-center font-roboto bg-[linear-gradient(#DCE7ED_-50%,#3E69B9_50%)]">
+        <div className="flex flex-col text-center">
+          <p className="mb-[4px] font-bold font-placard tracking-wider text-5xl">
+            SCHEDULE
+          </p>
+          <p className="text-lg font-roboto underline tracking-wide pb-[1rem]">
+            <a
+              target="_blank"
+              href="https://aisutd.notion.site/aisutd/HackAI-Hacker-Guide-1a42a12a713341dd9e9c7200054fee47"
+            >
+              Click for Prompts (needs updating)
+            </a>
+          </p>
+        </div>
+        <div className="flex justify-center items-center">
+          <img
+            className="object-contain pl-[0%] w-[30%] hidden md:block lg:pl-[10%] lg:w-[50%]"
+            src="skis.png"
+          />
+          <div className="text-wrap break-words px-[10%] w-[100%] md:px-[0%] md:w-[70%] md:pr-[5%] lg:w-[50%]">
+            <div className="pt-[10px]">8:30am:<pre className="inline">{'\t\t'}</pre>Check In + Sponsor Fair<br /></div>
+            <div className="pt-[10px]">9:00am:<pre className="inline">{'\t\t'}</pre>Kickoff Ceremony (SCI 1.220)<br /></div>
+            <div className="pt-[10px]">10:00am:<pre className="inline">{'\t'}</pre>Workshop A/Workshop B/Workshop C (SCI 1.210/2.230/2.235)<br /></div>
+            <div className="pt-[10px]">11:00am:<pre className="inline">{'\t'}</pre>AI Tech Panel/Speaker (SCI 1.220/2.230)<br /></div>
+            <div className="pt-[10px]">12:00pm:<pre className="inline">{'\t'}</pre>Makeathon Prompt Announcement (SCI 1.220)<br /></div>
+            <div className="pt-[10px]">12:30pm:<pre className="inline">{'\t'}</pre>Lunch (Blackstone Launchpad)<br /></div>
+            <div className="pt-[10px]">1:30pm:<pre className="inline">{'\t\t'}</pre>Makeathon Working Hours/Strategy Workshop/Build and Pitch Workshop (All SCI/SCI 2.230/SCI 2.235)<br /></div>
+            <div className="pt-[10px]">3:30pm:<pre className="inline">{'\t\t'}</pre>Sumbit Projects (SCI 1.220)<br /></div>
+            <div className="pt-[10px]">3:30pm:<pre className="inline">{'\t\t'}</pre>Networking (Blackstone Launchpad)<br /></div>
+            <div className="pt-[10px]">4:15pm:<pre className="inline">{'\t\t'}</pre>Presentations Start (SCI 1.220)<br /></div>
+            <div className="pt-[10px]">6:00pm:<pre className="inline">{'\t\t'}</pre>Judging Finalized (SCI 2.210)<br /></div>
+            <div className="pt-[10px]">6:30pm:<pre className="inline">{'\t\t'}</pre>Results/Closing (SCI 1.220)<br /></div>
           </div>
-          <div className="justify-center flex">
-            <img
-              className="pl-[10vw] w-[50vw] object-contain hidden md:block"
-              src="skis.png"
-            />
-            <div className="w-[50vw] pr-[5vw]">
-              <TabPanel value="one">
-                <pre>
-                  9:00am:{'\t\t'}Check In + Sponsor Fair<br />
-                  11:00am:{'\t'}Kickoff Ceremony (ECSW TI Auditorium)<br />
-                  12:00pm:{'\t'}Lunch + Hacking Starts (Location TBD)<br />
-                  1:30pm:{'\t\t'}2 orgs workshop<br />
-                  2:30pm:{'\t\t'}GEICO workshop<br />
-                  3:30pm:{'\t\t'}CAIML Workshop<br />
-                  4:30pm:{'\t\t'}Cartesi Workshop<br />
-                  5:30pm:{'\t\t'}BLP Workshop<br />
-                  6:30pm:{'\t\t'}2 orgs Workshop<br />
-                  7:30pm:{'\t\t'}Dinner<br />
-                  8:30pm:{'\t\t'}Social Event<br />
-                  9:00pm:{'\t\t'}Social Event<br />
-                  11:30pm:{'\t'}Late Night Snack (Location TBD)<br />
-                  11:59pm:{'\t'}Submit Dev Post
-                </pre>
-              </TabPanel>
-              <TabPanel value="two">
-                <pre>
-                12:00am - 9:00am:{'\t'}Quiet hours<br />
-                8:00am:{'\t\t\t\t'}Breakfast (Location TBD)<br />
-                10:00am:{'\t\t\t'}How to Pitch Workshop<br />
-                11:00am - 12:30pm:{'\t'}Lunch (Location TBD)<br />
-                12:00pm:{'\t\t\t'}SUBMISSION<br />
-                1:00pm:{'\t\t\t\t'}Judging (Location TBD)<br />
-                4:00pm:{'\t\t\t\t'}Judging Finishes<br />
-                5:00pm:{'\t\t\t\t'}Closing Ceremony (Location TBD)<br />
-                6:00pm:{'\t\t\t\t'}Everyone leaves
-                </pre>
-              </TabPanel>
-            </div>
-          </div>
-        </Tabs>
+        </div>
       </div>
     </>
   );

@@ -19,7 +19,7 @@ function AboutSection()
       <div className="mx-auto sm:px-8 md:px-32 lg:px-44 font-placard z-0">
         <div className="block md:flex">
           <div className="mb-6 md:mb-2 md:mr-14">
-            <Typography className="font-placard text-center md:text-left mb-2 md:mb-4 text-3xl md:text-4xl font-bold">About</Typography>
+            <p className="font-placard text-center md:text-left mb-2 md:mb-4 text-4xl font-bold">About</p>
           </div>
           <div 
             ref={ref}
@@ -35,10 +35,10 @@ function AboutSection()
             >
               <div className="text-xl md:text-2xl font-bold flex justify-center items-center md:justify-start md:items-start">
                 <img src="target.svg" />
-                <Typography className="font-placard text-2xl md:text-3xl ml-2 mb-2">Our Mission</Typography>
+                <Typography className="font-placard text-2xl ml-2 md:text-3xl md:mb-2">Our Mission</Typography>
               </div>
               <div className="text-lg font-roboto">
-              We hope to demystify this special niche in computer science and bring it forward to all students through an AI-related hackathon. We aim for our events to provide opportunities for students to learn about the field and connect with experienced professionals who can further guide them in their AI journey.
+              We hope to demystify this special niche in computer science and bring it forward to all students through an AI-related makeathon. We aim for our events to provide opportunities for students to learn about the field and connect with experienced professionals who can further guide them in their AI journey.
               </div>
             </div>
             <div 
@@ -51,10 +51,10 @@ function AboutSection()
             >
               <div className="text-xl md:text-2xl font-bold flex justify-center items-center md:justify-start md:items-start">
                 <img src="brain.png" className="h-[35px]"/>
-                <Typography className="font-placard text-2xl md:text-3xl ml-2 mb-2">What is HackAI</Typography>
+                <Typography className="font-placard text-2xl ml-2 md:text-3xl md:mb-2">What is Tech Tank?</Typography>
               </div>
               <div className="text-lg font-roboto">
-                Student-run hackathon organized by the Artificial Intelligence Society (AIS) at UTD, aiming to empower students with the knowledge and resources needed to build Artificial Intelligence related projects in the span of 24 hours. Our goal is to provide UTD students with a fun-filled, engaging day that will inspire them and ignite their passion for AI.
+                Student-run makeathon organized by the Artificial Intelligence Society (AIS) at UTD, aiming to empower students with the knowledge and resources needed to build Artificial Intelligence related projects in the span of 24 hours. Our goal is to provide UTD students with a fun-filled, engaging day that will inspire them and ignite their passion for AI.
               </div>
             </div>
             <div 
@@ -67,7 +67,7 @@ function AboutSection()
             >
               <div className="text-xl md:text-2xl font-bold flex justify-center items-center md:justify-start md:items-start">
                 <img src="handshake.svg" className="md:pt-[6px]"/>
-                <Typography className="font-placard text-2xl md:text-3xl ml-2 mb-2">For Sponsors</Typography>
+                <Typography className="font-placard text-2xl ml-2 md:text-3xl md:mb-2">For Sponsors</Typography>
               </div>
               <div className="text-lg font-roboto">
                 Sponsoring HackAI is a win-win opportunity. Your contribution can help enable participants to complete company challenges while giving your company access to top tech talent, direct engagement with students, opportunities for building brand recognition, and even potential business solutions.

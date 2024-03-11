@@ -1,5 +1,5 @@
 # HackAI 2024 Website
-Sadly, this was never launched. However, the Tech Tank website is mostly the exact same, and it is located in the tech-tank branch or this repo. Tech Tank was our pivot event that replaced HackAI in 2024. 
+Sadly, this was never launched. However, the Tech Tank website is mostly the exact same, and it is located in the tech-tank branch of this repo. Tech Tank was our pivot event that replaced HackAI in 2024. 
 
 ## Development
 This project is built using [NextJS](https://nextjs.org/), a React framework
