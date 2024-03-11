@@ -12,7 +12,7 @@ function Footer() {
         bg-[url('/CorrectFooter.png')] bg-contain bg-no-repeat
       "/>
       <div className="absolute top-[63.5vw] w-[100vw] items-center flex flex-col gap-[1vw]">
-        <h1 className="ml-[0.7%] text-hai-orange text-[6vw] leading-none font-fredoka mb-[0.5vw]">Tech Tank</h1>
+        <h1 className="ml-[0.7%] text-hai-orange text-[6vw] leading-none font-fredoka mb-[0.5vw]">Hack AI</h1>
         <img src="/footer-2024-sign-bar.png" className="ml-[0.7%] w-[30%] h-auto"/>
         <img src="/see-you-on-the-slopes.png" className="ml-[0.7%] w-[30%] h-auto"/>
       </div>
