@@ -8,7 +8,7 @@ function PastEvent() {
     ">
       <div className="w-full flex flex-col justify-center">
         <h2 className="
-          text-4xl font-bold text-hai-navy text-center font-placard tracking-widest
+          font-bold text-hai-navy text-center font-placard tracking-widest text-5xl sm:text-4xl
         ">
           HACK AI 2023
         </h2>

@@ -3,8 +3,8 @@ import { Typography } from "@mui/material";
 const questions = [
   {
     icon: "faq-icons/robot.svg",
-    heading: "What is a hackathon?",
-    body: <>A 24-hour tech event for teams of students to learn new skills, build cool software projects, and meet tons of other students and professionals.</>
+    heading: "What is a makeathon?",
+    body: <>A 1-day tech event for students to learn new skills, develop cool software project ideas, and meet tons of other students and professionals. Our event will start off with a morning of workshops, followed by a lunchbreak, and then the makeathon will begin.</>
   },
   {
     icon: "faq-icons/handhshake.svg",
@@ -14,17 +14,17 @@ const questions = [
   {
     icon: "faq-icons/person.svg",
     heading: "Who can attend?",
-    body: <>You must be at least <b>18 years</b> of age. Non-STEM majors, first-time hackers, and beginner coders are welcomed and encouraged to join us! This hackathon is meant to introduce AI to everyone. All you need is a drive and passion to learn!</>
+    body: <>You must be at least <b>18 years</b> of age. Non-STEM majors, beginner coders, and even those with <b>zero AI experience</b> are welcomed and encouraged to join us! This event is meant to introduce AI to everyone. All you need is a drive and passion to learn!</>
   },
   {
     icon: "faq-icons/wallet.svg",
     heading: "How much does it cost?",
-    body: <>There will be food, awesome workshops, and super cool swag, all completely <b>FREE</b>!</>
+    body: <>There will be food, awesome workshops, and swag, all completely <b>FREE</b>!</>
   },
   {
     icon: "faq-icons/computer.svg",
     heading: "What projects should I expect?",
-    body: <>Topics such as Natural Language Processing, Machine Learning, Data Analytics, and more will be represented amongst these projects.</>
+    body: <>Project ideas will be centered around various AI topics including Natural Language Processing, Machine Learning, Data Analytics, and more. The morning workshops will provide insight and context on what you should be thinking about when coming up with your solution.</>
   },
    
 ]

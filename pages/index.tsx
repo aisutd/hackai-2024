@@ -29,33 +29,34 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <title>HackAI</title>
+        <title>Tech Tank</title>
         <link rel="icon" type="image/svg+xml" href="/hai-logo.svg" />
         <meta
           name="description"
-          content="Welcome to HackAI: the biggest AI hackathon in Texas!"
+          content="Welcome to Tech Tank!"
         />
       </Head>
-      <main className="min-h-screen w-[100%] bg-hai-beige text-ais-white subpixel-antialiased overflow-x-hidden z-0">
+      <main className="min-h-screen w-[100%] bg-hai-dark-blue text-ais-white subpixel-antialiased overflow-x-hidden z-0">
         <section id="appbar" className="fixed h-[5rem] w-[100%] z-50 uppercase text-white font-bold text-xl">
           <Appbar/>
         </section>
         <section id="snow" className="fixed w-[100%] h-[100vh] z-40 [pointer-events:none]">
           <Snow/>
         </section>
-        <section id="landing" className="relative h-[100vh] z-0">
+        <section id="landing" className="relative h-[100vh] z-10">
           <Landing/>
         </section>
-        <section id="about" className="relative z-10">
+        <section id="about" className="relative z-20">
           <AboutSection/>
         </section>
-        <section id="past-event">
+        <div className="absolute h-[4rem] w-[100%] backdrop-blur-[4px] -mt-[2rem] z-30"/>
+        <section id="past-event" className="hidden">
           <PastEvent/>
         </section>
-        <section id="schedule" className="relative">
+        <section id="schedule" className="relative z-0">
           <Schedule />
         </section>
-        <section id="faqs" className="relative bg-gradient-to-b from-hai-dark-blue to-hai-cloud">
+        <section id="faqs" className="relative bg-[linear-gradient(#3E69B9_25%,#DCE7ED_100%)]">
           <FAQs />
         </section>
         {/*footer is inside this section*/}
